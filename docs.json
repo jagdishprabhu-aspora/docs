@@ -49,21 +49,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Support Portal",
-          "href": "#",
-          "icon": "headset"
-        },
-        {
-          "anchor": "Alpha Desk",
-          "href": "#",
-          "icon": "desktop"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -75,12 +61,7 @@
         "label": "Support",
         "href": "mailto:support@aspora.com"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "#"
-    }
+    ]
   },
   "contextual": {
     "options": [
