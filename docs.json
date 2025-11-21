@@ -1,9 +1,9 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Aspora CX Documentation",
   "colors": {
-    "primary": "#16A34A",
+    "primary": "#5523B2",
     "light": "#07C983",
     "dark": "#15803D"
   },
@@ -11,58 +11,40 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "index"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Customer Verification",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "verification/kyc-verification"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Transfers & Payments",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "transfers/transfer-types",
+              "transfers/transfer-fees-limits",
+              "transfers/referrals"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Operations Tools",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "operations/alpha-desk",
+              "operations/order-handling",
+              "operations/payment-status"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Ticket Management",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "tickets/operations-tickets"
             ]
           }
         ]
@@ -71,14 +53,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Support Portal",
+          "href": "#",
+          "icon": "headset"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Alpha Desk",
+          "href": "#",
+          "icon": "desktop"
         }
       ]
     }
@@ -91,13 +73,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@aspora.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "#"
     }
   },
   "contextual": {
@@ -114,9 +96,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/aspora",
+      "linkedin": "https://linkedin.com/company/aspora"
     }
   }
 }

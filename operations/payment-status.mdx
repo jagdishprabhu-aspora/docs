@@ -1,0 +1,422 @@
+---
+title: "Payment Status Definitions"
+description: "Understand and explain payment statuses to customers accurately"
+---
+
+## Overview
+
+Use this guide to understand payment statuses and explain them clearly to customers. You'll learn what each status means, what actions you need to take, and how to set appropriate expectations for processing times.
+
+<Info>
+  This section contains definitions and workflows for common payment statuses encountered in Aspora operations.
+</Info>
+
+## Common Payment Statuses
+
+While specific status definitions may vary by system (LULU for UK, Falcon for UAE), the following represent typical payment status categories:
+
+### Pending Statuses
+
+<AccordionGroup>
+  <Accordion icon="clock" title="Payment Pending">
+    **Description:**
+    - Payment has not yet been received
+    - Waiting for customer to initiate payment
+    
+    **Customer Action Required:**
+    - Complete bank transfer
+    - Send funds using provided details
+    
+    **CX Action:**
+    - Verify payment instructions were sent
+    - Check if sufficient time has passed
+    - Follow up if payment overdue
+  </Accordion>
+  
+  <Accordion icon="hourglass" title="Payment Received - Processing">
+    **Description:**
+    - Funds received by Aspora
+    - Being verified and allocated to order
+    
+    **Customer Action Required:**
+    - None - wait for processing
+    
+    **CX Action:**
+    - Inform customer payment received
+    - Provide processing timeline
+    - Monitor for completion
+  </Accordion>
+</AccordionGroup>
+
+### Review Statuses
+
+<AccordionGroup>
+  <Accordion icon="magnifying-glass" title="Under Review">
+    **Description:**
+    - Payment flagged for additional verification
+    - Compliance or fraud check in progress
+    
+    **Customer Action Required:**
+    - May need to provide additional documents
+    - Wait for review completion
+    
+    **CX Action:**
+    - Inform customer of review (without alarming)
+    - Request any needed documents
+    - Set expectations for review timeline
+  </Accordion>
+  
+  <Accordion icon="shield" title="AML/Compliance Hold">
+    **Description:**
+    - Payment held for Anti-Money Laundering checks
+    - Enhanced due diligence required
+    
+    **Customer Action Required:**
+    - Provide requested documentation
+    - Answer compliance questions if needed
+    
+    **CX Action:**
+    - Do not disclose specific AML concerns
+    - Request documents professionally
+    - Never bypass compliance holds
+  </Accordion>
+</AccordionGroup>
+
+### Completed Statuses
+
+<AccordionGroup>
+  <Accordion icon="circle-check" title="Payment Confirmed">
+    **Description:**
+    - Payment verified and accepted
+    - Order proceeding to fulfillment
+    
+    **Customer Action Required:**
+    - None
+    
+    **CX Action:**
+    - Confirm to customer
+    - Provide expected completion time
+  </Accordion>
+  
+  <Accordion icon="badge-check" title="Transferred to Beneficiary">
+    **Description:**
+    - Funds sent to recipient
+    - Transaction complete
+    
+    **Customer Action Required:**
+    - None - may verify with beneficiary
+    
+    **CX Action:**
+    - Send completion confirmation
+    - Provide transaction reference
+    - Offer beneficiary can verify receipt
+  </Accordion>
+</AccordionGroup>
+
+### Failed/Rejected Statuses
+
+<AccordionGroup>
+  <Accordion icon="circle-xmark" title="Payment Failed">
+    **Description:**
+    - Payment attempt unsuccessful
+    - Common with card payments
+    
+    **Customer Action Required:**
+    - Retry payment
+    - Use alternative payment method
+    - Check with bank if issue persists
+    
+    **CX Action:**
+    - Explain failure reason if available
+    - Suggest alternative payment methods
+    - Assist with retry process
+  </Accordion>
+  
+  <Accordion icon="ban" title="Payment Rejected">
+    **Description:**
+    - Payment rejected by system or compliance
+    - Cannot be processed
+    
+    **Customer Action Required:**
+    - Await refund
+    - May need to use different payment source
+    
+    **CX Action:**
+    - Initiate refund process
+    - Provide refund timeline
+    - Suggest alternatives if appropriate
+  </Accordion>
+</AccordionGroup>
+
+### Refund Statuses
+
+<AccordionGroup>
+  <Accordion icon="rotate-left" title="Refund Initiated">
+    **Description:**
+    - Refund process started
+    - Funds being returned to customer
+    
+    **Customer Action Required:**
+    - Wait for refund to appear in account
+    
+    **CX Action:**
+    - Provide refund timeline
+    - Confirm refund method and destination
+  </Accordion>
+  
+  <Accordion icon="money-bill-transfer" title="Refund Completed">
+    **Description:**
+    - Refund successfully processed
+    - Funds returned to customer
+    
+    **Customer Action Required:**
+    - Verify refund received
+    - Allow bank processing time
+    
+    **CX Action:**
+    - Confirm completion with customer
+    - Provide transaction reference
+    - Note: bank processing may take additional days
+  </Accordion>
+</AccordionGroup>
+
+## Payment Status Workflows
+
+### Successful Payment Workflow
+
+When everything goes smoothly, payments follow this path:
+
+**Payment Pending → Payment Received → Payment Confirmed → Processing → Transferred to Beneficiary → Complete**
+
+<Steps>
+  <Step title="Payment Pending">
+    Customer initiates the order and receives payment instructions.
+    
+    **Your role:** Verify customer received instructions and knows how to pay.
+  </Step>
+  
+  <Step title="Payment Received">
+    Aspora receives the customer's funds.
+    
+    **Your role:** Confirm payment receipt in Alpha Desk if customer inquires.
+    
+    <Check>
+    You can see payment received status typically within 1-2 business days for manual transfers.
+    </Check>
+  </Step>
+  
+  <Step title="Payment Confirmed">
+    Payment is verified and allocated to the order.
+    
+    **Your role:** Inform customer their payment is confirmed and processing will begin.
+  </Step>
+  
+  <Step title="Processing">
+    The order is being processed for transfer to the beneficiary.
+    
+    **Your role:** Provide expected completion timeframe based on region (UK: 24-48h, UAE RDA: 24h, UAE VDA: 72h).
+  </Step>
+  
+  <Step title="Transferred to Beneficiary">
+    Funds are sent to the recipient's account.
+    
+    **Your role:** Notify customer of successful transfer and provide transaction reference.
+  </Step>
+  
+  <Step title="Complete">
+    Transaction is fully completed.
+    
+    **Your role:** Confirm customer satisfaction and close the inquiry.
+    
+    <Check>
+    Update ticket status to resolved after customer confirms receipt.
+    </Check>
+  </Step>
+</Steps>
+
+### Failed Payment Flow
+
+```mermaid
+Payment Pending → Payment Attempt → Payment Failed → 
+Retry or Cancel → Refund if Applicable
+```
+
+<Steps>
+  <Step title="Payment Pending">
+    Customer attempts payment
+  </Step>
+  
+  <Step title="Payment Attempt">
+    Payment processing attempted
+  </Step>
+  
+  <Step title="Payment Failed">
+    Payment unsuccessful
+  </Step>
+  
+  <Step title="Retry or Cancel">
+    Customer retries or cancels order
+  </Step>
+  
+  <Step title="Refund if Applicable">
+    If funds were debited, refund processed
+  </Step>
+</Steps>
+
+### Review/Hold Flow
+
+```mermaid
+Payment Received → Under Review → 
+Decision → Approved (Continue) or Rejected (Refund)
+```
+
+<Steps>
+  <Step title="Payment Received">
+    Funds received by Aspora
+  </Step>
+  
+  <Step title="Under Review">
+    Flagged for compliance or fraud check
+  </Step>
+  
+  <Step title="Decision">
+    Review completed, decision made
+  </Step>
+  
+  <Step title="Approved">
+    If approved: Continue to processing
+  </Step>
+  
+  <Step title="Rejected">
+    If rejected: Initiate refund
+  </Step>
+</Steps>
+
+## Regional Considerations
+
+### United Kingdom (LULU System)
+
+<Card title="UK Payment Statuses" icon="flag-uk">
+  **Key Points:**
+  - Primarily manual bank transfers
+  - LULU sub-statuses indicate payment state
+  - Payment confirmation may take 1-2 business days
+  - AML reviews more common for larger amounts
+  
+  **Common Statuses:**
+  - `PAYMENT_PENDING`
+  - `TXN_RELEASED`
+  - `TXN_TRANSMITTED`
+  - `AML_MARKED_FOR_EDD`
+</Card>
+
+### United Arab Emirates (Falcon System)
+
+<Card title="UAE Payment Statuses" icon="flag-ae">
+  **Key Points:**
+  - Multiple payment methods (card, Direct Pay, manual)
+  - Card payments: near-instant status updates
+  - Direct Pay: faster than manual transfers
+  - Falcon workflow tracks payment stages
+  
+  **Processing Times:**
+  - Card payments: Immediate to few hours
+  - Direct Pay: Within hours
+  - Manual: 24-72 hours
+</Card>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion icon="message" title="Communicating Status">
+    **Do:**
+    - Use clear, non-technical language
+    - Provide expected timelines
+    - Set realistic expectations
+    - Offer proactive updates
+    
+    **Don't:**
+    - Use system codes without explanation
+    - Promise specific times you can't guarantee
+    - Disclose sensitive compliance details
+    - Alarm customers unnecessarily
+  </Accordion>
+  
+  <Accordion icon="clock" title="Timing Expectations">
+    **Set appropriate expectations:**
+    - Manual transfers: 1-3 business days to confirm
+    - Card payments: Minutes to hours
+    - Reviews: 24-72 hours typically
+    - Refunds: 5-10 business days
+    
+    Always add buffer time in communications
+  </Accordion>
+  
+  <Accordion icon="sync" title="Status Monitoring">
+    **Regular checks for:**
+    - Payments pending over 48 hours
+    - Reviews exceeding 72 hours
+    - Failed payments needing follow-up
+    - Refunds pending completion
+    
+    Proactive monitoring prevents escalations
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting Common Issues
+
+<AccordionGroup>
+  <Accordion icon="question" title="Customer says payment sent but status shows pending">
+    **Steps:**
+    1. Verify customer sent to correct account
+    2. Check reference number was included
+    3. Confirm amount matches exactly
+    4. Check recent bank receipts
+    5. If payment found, escalate for status update
+  </Accordion>
+  
+  <Accordion icon="question" title="Payment stuck in 'Under Review' status">
+    **Steps:**
+    1. Check review duration
+    2. If under 72 hours, inform customer it's normal
+    3. Verify all documents submitted
+    4. If over 72 hours, escalate to compliance team
+    5. Never promise specific review completion time
+  </Accordion>
+  
+  <Accordion icon="question" title="Refund not received by customer">
+    **Steps:**
+    1. Verify refund status is 'Completed'
+    2. Confirm refund sent to correct account/card
+    3. Check refund date (allow 5-10 business days)
+    4. Provide transaction reference
+    5. If timeline exceeded, escalate to finance team
+  </Accordion>
+  
+  <Accordion icon="question" title="Payment failed but customer was charged">
+    **Steps:**
+    1. Verify charge on customer's account
+    2. Check if payment actually failed or pending
+    3. Explain temporary authorization vs. actual charge
+    4. If genuinely charged for failed payment, initiate refund
+    5. Provide refund timeline and reference
+  </Accordion>
+</AccordionGroup>
+
+## Quick Status Reference
+
+| Status | Meaning | Action Required | Typical Duration |
+|--------|---------|-----------------|------------------|
+| Payment Pending | Awaiting payment | Customer pays | Until payment sent |
+| Payment Received | Funds received | System processing | Few hours |
+| Under Review | Additional checks | Possibly documents | 24-72 hours |
+| Payment Confirmed | Verified | None | - |
+| Processing | Transfer in progress | None | Per regional TAT |
+| Transferred | Complete | None | - |
+| Payment Failed | Unsuccessful | Retry or alternative | - |
+| Refund Initiated | Returning funds | Wait | 5-10 business days |
+
+<Note>
+  Always check the specific system (LULU or Falcon) for exact status terminology and definitions.
+</Note>
+

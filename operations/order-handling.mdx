@@ -1,0 +1,335 @@
+---
+title: "Order Handling by Status"
+description: "Handle customer orders effectively based on current status for UK and UAE regions"
+---
+
+## Overview
+
+Learn how to handle customer orders based on their current status in the system. You'll understand what each status means, what actions to take, and how to communicate clearly with customers about their order progress.
+
+## United Kingdom
+
+UK orders are primarily managed through the **LULU** system with specific sub-statuses indicating the order state.
+
+### Key LULU Sub Statuses
+
+<CardGroup cols={2}>
+  <Card title="PAYMENT_PENDING" icon="clock">
+    **Meaning:** Awaiting payment from customer
+    
+    **Action:**
+    - Verify if customer has sent payment
+    - Check bank account for incoming transfers
+    - Provide payment instructions if needed
+  </Card>
+  
+  <Card title="AML_MARKED_FOR_EDD" icon="flag">
+    **Meaning:** Flagged for Enhanced Due Diligence
+    
+    **Action:**
+    - Order requires additional compliance review
+    - Do not process until clearance
+    - Customer may need to provide additional documents
+  </Card>
+  
+  <Card title="TXN_RELEASED" icon="check-circle">
+    **Meaning:** Transaction has been released for processing
+    
+    **Action:**
+    - Order approved and moving forward
+    - Normal processing continues
+    - Customer can be informed of progress
+  </Card>
+  
+  <Card title="AML_REJECTED" icon="circle-xmark">
+    **Meaning:** Order rejected by AML/Compliance
+    
+    **Action:**
+    - Order cannot be processed
+    - Initiate refund process
+    - Inform customer professionally
+    - Do not disclose specific rejection reasons
+  </Card>
+  
+  <Card title="CANCELLATION_COMPLETED" icon="ban">
+    **Meaning:** Order has been cancelled
+    
+    **Action:**
+    - Verify refund processed
+    - Confirm cancellation reason
+    - Update customer on refund timeline
+  </Card>
+  
+  <Card title="TXN_TRANSMITTED" icon="paper-plane">
+    **Meaning:** Funds transmitted to beneficiary
+    
+    **Action:**
+    - Order completed successfully
+    - Provide confirmation to customer
+    - Update with tracking information if available
+  </Card>
+</CardGroup>
+
+### How to Handle UK Orders
+
+Follow this workflow when a customer contacts you about a UK order:
+
+<Steps>
+  <Step title="Look up the order">
+    Search for the order in LULU system using the LR or LULU ID.
+    
+    <Tip>
+    Ask the customer for their Order ID if they don't have the LULU reference number.
+    </Tip>
+  </Step>
+  
+  <Step title="Identify the sub status">
+    Check the specific sub status displayed (e.g., PAYMENT_PENDING, TXN_RELEASED, etc.).
+    
+    <Check>
+    Verify you understand what this status means before communicating with the customer.
+    </Check>
+  </Step>
+  
+  <Step title="Take appropriate action">
+    Follow the action items listed above for that specific status. Don't proceed to the next step until you've completed the required actions.
+  </Step>
+  
+  <Step title="Communicate with customer">
+    Explain the status and next steps to the customer using clear, non-technical language.
+    
+    <Warning>
+    Never disclose specific AML or compliance rejection reasons. Use general terms like "additional review required."
+    </Warning>
+  </Step>
+  
+  <Step title="Document your actions">
+    Log all actions taken in the ticket system, including what you checked, what you found, and what you told the customer.
+  </Step>
+</Steps>
+
+## United Arab Emirates
+
+UAE operations use the **Falcon** workflow system for both RDA (Remittance Direct Account) and VDA (Virtual Direct Account) orders.
+
+### Falcon Workflows
+
+<Info>
+  Falcon workflows apply to both:
+  - **RDA** - Remittance Direct Account transfers
+  - **VDA** - Virtual Direct Account transfers
+</Info>
+
+### Processing and Refunds
+
+<Tabs>
+  <Tab title="Automatic Refunds">
+    **Certain order types trigger automatic refunds:**
+    - Failed card transactions
+    - Declined payments
+    - System errors during processing
+    
+    **No manual intervention required** - System handles automatically
+  </Tab>
+  
+  <Tab title="Manual Refunds">
+    **Operations team processes refunds for:**
+    - Manual bank transfers
+    - Compliance rejections
+    - Customer-requested cancellations
+    - Special cases requiring review
+    
+    **Requires team action** - Follow refund procedures
+  </Tab>
+</Tabs>
+
+### Turnaround Time (TAT)
+
+<CardGroup cols={2}>
+  <Card title="RDA Orders" icon="clock">
+    **24 hours**
+    
+    Standard processing time for Remittance Direct Account orders
+  </Card>
+  
+  <Card title="VDA Orders" icon="clock">
+    **72 hours**
+    
+    Standard processing time for Virtual Direct Account orders
+  </Card>
+</CardGroup>
+
+<Warning>
+  These are **maximum** turnaround times. Many orders process faster. Always aim to complete within or before these timeframes.
+</Warning>
+
+### How to Handle UAE Orders
+
+Follow this workflow when assisting UAE customers:
+
+<Steps>
+  <Step title="Access Falcon dashboard">
+    Open the order in Falcon system using the order ID.
+  </Step>
+  
+  <Step title="Determine order type">
+    Check if the order is RDA (24h TAT) or VDA (72h TAT).
+    
+    <Info>
+    This determines the expected processing timeframe you'll communicate to the customer.
+    </Info>
+  </Step>
+  
+  <Step title="Review workflow stage">
+    Check the current stage in the Falcon workflow to understand where the order is in processing.
+  </Step>
+  
+  <Step title="Verify turnaround time">
+    Calculate how long the order has been processing and compare against TAT:
+    - RDA: Should complete within 24 hours
+    - VDA: Should complete within 72 hours
+    
+    <Check>
+    Use the order creation timestamp to calculate elapsed time accurately.
+    </Check>
+  </Step>
+  
+  <Step title="Take appropriate action">
+    Based on your findings:
+    
+    - **Within TAT**: Continue monitoring and inform customer of expected completion time
+    - **Approaching TAT (>75% elapsed)**: Prioritize and notify operations team proactively
+    - **Exceeded TAT**: Escalate immediately to operations manager
+  </Step>
+  
+  <Step title="Update the customer">
+    Communicate the current status and realistic timeline based on your assessment.
+    
+    <Tip>
+    Always set expectations slightly longer than the TAT to account for potential delays.
+    </Tip>
+  </Step>
+</Steps>
+
+## Status-Based Response Templates
+
+### For PAYMENT_PENDING
+
+```
+Your order is awaiting payment. Please ensure you have completed the 
+bank transfer using the details provided. Once we receive your payment, 
+processing will begin immediately.
+```
+
+### For TXN_RELEASED
+
+```
+Good news! Your transaction has been approved and is being processed. 
+Your funds should reach the beneficiary within [timeframe].
+```
+
+### For AML_MARKED_FOR_EDD
+
+```
+Your order is currently under review as part of our standard security 
+procedures. We may contact you for additional information. Thank you 
+for your patience.
+```
+
+### For AML_REJECTED
+
+```
+We regret to inform you that we are unable to process your transaction 
+at this time. A refund will be processed to your original payment method 
+within [timeframe]. Please contact support if you have questions.
+```
+
+### For Within TAT (UAE)
+
+```
+Your order is being processed and is on track. For RDA orders, processing 
+typically completes within 24 hours. For VDA orders, please allow up to 
+72 hours. We'll notify you once complete.
+```
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion icon="bolt" title="Quick Response">
+    - Check status immediately when customer inquires
+    - Provide accurate timeframe expectations
+    - Don't promise faster processing than TAT allows
+  </Accordion>
+  
+  <Accordion icon="eye" title="Proactive Monitoring">
+    - Monitor orders approaching TAT deadlines
+    - Flag potential delays early
+    - Escalate before TAT expires, not after
+  </Accordion>
+  
+  <Accordion icon="message" title="Clear Communication">
+    - Use status-appropriate language
+    - Avoid technical jargon with customers
+    - Set realistic expectations
+    - Never disclose sensitive compliance details
+  </Accordion>
+  
+  <Accordion icon="shield" title="Compliance Awareness">
+    - Never bypass AML/EDD holds
+    - Document all compliance-related actions
+    - Escalate suspicious patterns
+    - Protect customer privacy
+  </Accordion>
+</AccordionGroup>
+
+## Escalation Criteria
+
+<Warning>
+  **Escalate immediately if:**
+  - Order exceeds TAT without resolution
+  - Customer reports payment sent but status shows PAYMENT_PENDING for over 48 hours
+  - AML_MARKED_FOR_EDD status for over 72 hours without update
+  - System errors preventing status updates
+  - Customer threatens legal action or regulator complaint
+</Warning>
+
+## Common Issues and Solutions
+
+<AccordionGroup>
+  <Accordion icon="question" title="Customer paid but status still PAYMENT_PENDING">
+    **Steps:**
+    1. Verify payment details provided to customer
+    2. Check if customer used correct reference number
+    3. Confirm payment amount matches order
+    4. Check bank account for incoming payment
+    5. If payment found, notify finance team to update status
+  </Accordion>
+  
+  <Accordion icon="question" title="Order stuck in AML review">
+    **Steps:**
+    1. Check how long order has been in review
+    2. If under 72 hours, inform customer it's normal process
+    3. If over 72 hours, escalate to compliance team
+    4. Never promise specific resolution time for AML issues
+  </Accordion>
+  
+  <Accordion icon="question" title="UAE order exceeding TAT">
+    **Steps:**
+    1. Check Falcon for any error messages
+    2. Verify all required documents received
+    3. Check if waiting on beneficiary bank
+    4. Escalate to operations manager
+    5. Update customer with realistic timeline
+  </Accordion>
+</AccordionGroup>
+
+## Regional Comparison
+
+| Aspect | United Kingdom | United Arab Emirates |
+|--------|----------------|---------------------|
+| **System** | LULU | Falcon |
+| **Status Types** | Sub-statuses | Workflow stages |
+| **Processing Time** | Varies by status | RDA: 24h, VDA: 72h |
+| **Refunds** | Manual via Operations | Automatic or Manual |
+| **Main Bottlenecks** | AML reviews, Payment confirmation | Bank processing, Document verification |
+

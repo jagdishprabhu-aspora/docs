@@ -1,0 +1,558 @@
+---
+title: "Operations Ticket Processing"
+description: "Process tickets efficiently while meeting SLA requirements and maintaining quality"
+---
+
+## Overview
+
+Learn how to process operations tickets effectively from creation to closure. You'll understand the ticket lifecycle, meet SLA requirements, and follow best practices for consistent, high-quality customer support.
+
+## Your Ticket Processing Goals
+
+Focus on these objectives when handling tickets:
+
+- **Respond within SLA timeframes** to maintain service quality
+- **Resolve issues accurately** on the first attempt when possible
+- **Communicate clearly** with customers using professional, empathetic language
+- **Document thoroughly** so any team member can understand the case
+- **Escalate proactively** before issues become critical
+- **Learn from patterns** to prevent recurring issues
+
+<Info>
+  Effective ticket processing directly impacts customer satisfaction and retention. Take time to handle each ticket properly rather than rushing through them.
+</Info>
+
+## Ticket Lifecycle
+
+The ticket moves through defined stages from creation to closure:
+
+<Steps>
+  <Step title="Open">
+    **Initial State**
+    - Ticket created by customer or system
+    - Awaiting initial review
+    - Needs assignment
+    
+    **Action:** Review and assign to appropriate team member
+  </Step>
+  
+  <Step title="Waiting on CX">
+    **Customer Experience Team Action Required**
+    - Ticket assigned to CX team
+    - Requires investigation or processing
+    - Ball is in CX court
+    
+    **Action:** Work on resolution, gather information, process request
+  </Step>
+  
+  <Step title="In Progress">
+    **Active Processing**
+    - Currently being worked on
+    - Investigation underway
+    - Actions being taken
+    
+    **Action:** Continue processing until resolved or partner input needed
+  </Step>
+  
+  <Step title="Waiting on Partner">
+    **External Dependency**
+    - Waiting for bank response
+    - Pending beneficiary confirmation
+    - Awaiting partner system update
+    
+    **Action:** Monitor for partner response, follow up if delayed
+  </Step>
+  
+  <Step title="Resolved">
+    **Issue Fixed**
+    - Problem solved
+    - Customer informed of resolution
+    - Awaiting final confirmation
+    
+    **Action:** Verify customer satisfaction, prepare for closure
+  </Step>
+  
+  <Step title="Closed">
+    **Complete**
+    - Issue fully resolved
+    - Customer satisfied
+    - Documentation complete
+    
+    **Action:** Archive ticket, update knowledge base if applicable
+  </Step>
+</Steps>
+
+## Ticket Categories
+
+### Processing Delays
+
+<Accordion title="Processing Delays" icon="clock">
+  **Description:**
+  - Orders taking longer than expected
+  - Delays in transaction processing
+  - Holds or blocks on orders
+  
+  **Common Causes:**
+  - AML/compliance reviews
+  - Bank processing times
+  - Document verification pending
+  - System issues
+  
+  **Resolution Approach:**
+  - Identify cause of delay
+  - Provide customer with timeline
+  - Escalate if exceeding SLA
+  - Update customer proactively
+</Accordion>
+
+### CNR (Credit Not Received)
+
+<Accordion title="CNR - Credit Not Received" icon="money-bill-wave">
+  **Description:**
+  - Beneficiary has not received funds
+  - Transfer shows complete but recipient hasn't received
+  - Discrepancy between our system and beneficiary bank
+  
+  **Common Causes:**
+  - Bank processing delays
+  - Incorrect beneficiary details
+  - Beneficiary bank holding funds
+  - Routing issues
+  
+  **Resolution Approach:**
+  - Verify transfer status in our system
+  - Check with beneficiary bank
+  - Provide transaction reference to beneficiary
+  - Trace payment if needed
+  
+  **SLA:** UK RDA CNR - **48 hours**
+</Accordion>
+
+### Wrong Accounts
+
+<Accordion title="Wrong Accounts" icon="circle-exclamation">
+  **Description:**
+  - Funds sent to incorrect account
+  - Customer provided wrong details
+  - Entry error in beneficiary information
+  
+  **Common Causes:**
+  - Customer error in beneficiary details
+  - Copy/paste mistakes
+  - Outdated beneficiary information
+  - System data entry errors
+  
+  **Resolution Approach:**
+  - Verify actual recipient
+  - Initiate recall if possible
+  - Process refund if recall unsuccessful
+  - Update correct beneficiary details
+  - Re-send to correct account if applicable
+</Accordion>
+
+### Failed Transfers
+
+<Accordion title="Failed Transfers" icon="xmark">
+  **Description:**
+  - Transfer could not be completed
+  - Payment rejected by receiving bank
+  - System error preventing completion
+  
+  **Common Causes:**
+  - Beneficiary account issues
+  - Bank restrictions
+  - Compliance rejections
+  - Technical failures
+  
+  **Resolution Approach:**
+  - Identify failure reason
+  - Initiate refund
+  - Explain issue to customer
+  - Suggest alternative if available
+</Accordion>
+
+### Direct Transfers
+
+<Accordion title="Direct Transfers" icon="arrow-right-arrow-left">
+  **Description:**
+  - Special handling transfers
+  - Direct bank-to-bank transfers requiring manual processing
+  - Custom transfer arrangements
+  
+  **Common Use Cases:**
+  - Large value transfers
+  - Corporate transactions
+  - Special arrangement transfers
+  
+  **Resolution Approach:**
+  - Follow direct transfer procedures
+  - Ensure all documentation complete
+  - Coordinate with finance team
+  - Maintain close communication with customer
+  
+  **SLA:** **72 hours**
+</Accordion>
+
+## SLA (Service Level Agreement) Examples
+
+<CardGroup cols={2}>
+  <Card title="UK RDA CNR" icon="clock">
+    **48 hours**
+    
+    Resolution time for UK Credit Not Received cases
+  </Card>
+  
+  <Card title="Verification Delay" icon="clock">
+    **30 minutes**
+    
+    Response time for verification delay queries
+  </Card>
+  
+  <Card title="Direct Transfers" icon="clock">
+    **72 hours**
+    
+    Processing time for direct transfer requests
+  </Card>
+  
+  <Card title="General Inquiries" icon="clock">
+    **24 hours**
+    
+    Response time for standard customer inquiries
+  </Card>
+</CardGroup>
+
+<Warning>
+  **SLA Compliance is Critical**
+  - Monitor ticket ages daily
+  - Prioritize tickets approaching SLA deadline
+  - Escalate before SLA breach, not after
+  - Document any SLA exceptions with reason
+</Warning>
+
+## Best Practices
+
+### Review Tickets Twice Daily
+
+<Card icon="calendar-check" title="Daily Review Schedule">
+  **Morning Review (Start of Day):**
+  - Check overnight tickets
+  - Prioritize urgent cases
+  - Identify SLA-critical tickets
+  - Plan workload for the day
+  
+  **Afternoon Review (Mid-Day):**
+  - Check new tickets since morning
+  - Follow up on pending responses
+  - Update tickets approaching SLA
+  - Prepare for next day handover
+</Card>
+
+### Use Tags Effectively
+
+<AccordionGroup>
+  <Accordion icon="tag" title="Priority Tags">
+    - `urgent` - Requires immediate attention
+    - `sla-critical` - Approaching SLA deadline
+    - `escalated` - Management awareness required
+    - `vip` - High-value or sensitive customer
+  </Accordion>
+  
+  <Accordion icon="tag" title="Category Tags">
+    - `cnr` - Credit Not Received
+    - `delay` - Processing Delay
+    - `verification` - KYC/Document issues
+    - `refund` - Refund request
+    - `payment` - Payment related
+  </Accordion>
+  
+  <Accordion icon="tag" title="Status Tags">
+    - `pending-bank` - Awaiting bank response
+    - `pending-docs` - Awaiting customer documents
+    - `pending-approval` - Awaiting internal approval
+    - `follow-up-needed` - Requires follow-up action
+  </Accordion>
+</AccordionGroup>
+
+### Document Conversations Clearly
+
+<Card icon="file-lines" title="Documentation Best Practices">
+  **Every ticket update should include:**
+  - Date and time of action
+  - What was done or checked
+  - Outcome or findings
+  - Next steps or pending items
+  - Customer communication summary
+  
+  **Example Documentation:**
+  ```
+  2025-11-21 10:30 AM - Checked LULU system, order status shows 
+  TXN_TRANSMITTED. Contacted beneficiary bank using transaction ref 
+  #12345. Bank confirmed funds received and being credited to account 
+  ending 6789. Expected credit by EOD. Updated customer via email 
+  with bank confirmation. Pending customer confirmation of receipt.
+  Next: Follow up with customer tomorrow if not confirmed.
+  ```
+</Card>
+
+### Use Template-Based Communication
+
+<Tabs>
+  <Tab title="CNR Response">
+    ```
+    Dear [Customer Name],
+
+    Thank you for contacting us regarding your transfer [Order ID].
+
+    We have verified that the funds were successfully transmitted to 
+    the beneficiary's bank on [Date]. The transaction reference is 
+    [Reference Number].
+
+    Please share this reference number with the beneficiary, who can 
+    use it to check with their bank. Bank processing typically takes 
+    1-2 business days.
+
+    We are also reaching out to the beneficiary bank to confirm the 
+    status and will update you within 24 hours.
+
+    Best regards,
+    Aspora Customer Experience Team
+    ```
+  </Tab>
+  
+  <Tab title="Processing Delay">
+    ```
+    Dear [Customer Name],
+
+    Thank you for your patience regarding your transfer [Order ID].
+
+    Your order is currently [Status]. This is due to [Reason]. We 
+    expect processing to complete within [Timeframe].
+
+    We apologize for any inconvenience and appreciate your understanding. 
+    We will notify you immediately once processing is complete.
+
+    If you have any questions, please don't hesitate to reach out.
+
+    Best regards,
+    Aspora Customer Experience Team
+    ```
+  </Tab>
+  
+  <Tab title="Verification Request">
+    ```
+    Dear [Customer Name],
+
+    Thank you for choosing Aspora.
+
+    To proceed with your verification, we need the following documents:
+
+    [List specific documents needed]
+
+    Please ensure:
+    - Documents are clear and legible
+    - All corners and edges are visible
+    - Documents meet validity requirements
+    - Selfie clearly matches document photo
+
+    You can upload these documents through [Method].
+
+    Verification typically completes within 30 minutes of receiving 
+    valid documents.
+
+    Best regards,
+    Aspora Customer Experience Team
+    ```
+  </Tab>
+  
+  <Tab title="Resolution Confirmation">
+    ```
+    Dear [Customer Name],
+
+    Great news! Your issue regarding [Issue Description] has been resolved.
+
+    [Explain resolution]
+
+    Your [order/refund/request] is now complete. [Add relevant details 
+    like transaction reference, amount, date, etc.]
+
+    Thank you for your patience and for choosing Aspora.
+
+    If you have any other questions or concerns, please feel free to 
+    contact us.
+
+    Best regards,
+    Aspora Customer Experience Team
+    ```
+  </Tab>
+</Tabs>
+
+### Escalate Proactively
+
+<Card icon="triangle-exclamation" title="When to Escalate">
+  **Escalate immediately when:**
+  - SLA deadline approaching (75% of time elapsed)
+  - Customer threatens legal action or regulatory complaint
+  - Issue involves potential fraud or security breach
+  - Problem requires management decision
+  - Complex technical issue beyond your scope
+  - Pattern of similar issues detected
+  - Customer requests manager involvement
+  - Unusual or unprecedented situation
+  
+  **How to Escalate:**
+  1. Document all details clearly
+  2. Summarize issue and actions taken
+  3. Specify what decision or action is needed
+  4. Tag ticket as "escalated"
+  5. Notify appropriate manager
+  6. Continue monitoring until resolved
+</Card>
+
+## How to Process a Ticket
+
+Follow this workflow for every ticket you handle:
+
+<Steps>
+  <Step title="Review and categorize">
+    When you receive a ticket:
+    - Read all details carefully
+    - Categorize the ticket type (CNR, Delay, Refund, etc.)
+    - Add relevant tags for easy filtering
+    - Assign priority based on issue severity and SLA
+    - Set status to "Waiting on CX" to show you own it
+    
+    <Tip>
+    Spend 2-3 minutes on proper categorization upfront. This helps with tracking, reporting, and finding similar cases later.
+    </Tip>
+  </Step>
+  
+  <Step title="Investigate thoroughly">
+    Before taking action:
+    - Gather all relevant information from the ticket
+    - Look up customer account and order history in Alpha Desk
+    - Check order status in LULU (UK) or Falcon (UAE)
+    - Review any previous tickets from this customer
+    - Identify the root cause of the issue
+    - Update status to "In Progress"
+    
+    <Check>
+    Make sure you fully understand the issue before responding to the customer.
+    </Check>
+  </Step>
+  
+  <Step title="Take action">
+    Implement the resolution:
+    - Follow the appropriate procedure for the ticket type
+    - Coordinate with other teams if needed (finance, operations, compliance)
+    - Request additional information from customer if required
+    - Update ticket status based on dependencies
+    - Document every action you take with timestamps
+    
+    <Warning>
+    Never make changes to orders or initiate refunds without proper verification and authorization.
+    </Warning>
+  </Step>
+  
+  <Step title="Communicate with customer">
+    Keep the customer informed:
+    - Use the appropriate template as a starting point
+    - Personalize the message with specific details
+    - Set clear, realistic expectations for resolution time
+    - Explain next steps in simple language
+    - Offer alternative solutions if applicable
+    - Provide your contact information for follow-up
+    
+    <Tip>
+    Acknowledge any inconvenience caused, even if the issue wasn't Aspora's fault. Empathy builds trust.
+    </Tip>
+  </Step>
+  
+  <Step title="Resolve and verify">
+    Ensure the issue is fully resolved:
+    - Complete all required actions
+    - Verify the resolution in Alpha Desk
+    - Confirm the customer received the expected outcome
+    - Get customer confirmation that they're satisfied
+    - Document the final outcome clearly
+    - Update status to "Resolved"
+    
+    <Check>
+    Don't mark as resolved until the customer confirms satisfaction or you've verified completion.
+    </Check>
+  </Step>
+  
+  <Step title="Close properly">
+    Finalize the ticket:
+    - Ensure all documentation is complete
+    - Verify SLA was met (or exception documented)
+    - Add any learnings to knowledge base
+    - Close the ticket
+    - Follow up if you promised additional information
+    
+    <Info>
+    A properly closed ticket should tell the complete story to anyone who reads it later.
+    </Info>
+  </Step>
+</Steps>
+
+## Monitoring and Reporting
+
+### Daily Metrics to Track
+
+- Total tickets received
+- Tickets resolved
+- Average resolution time
+- SLA compliance rate
+- Tickets approaching SLA
+- Escalated tickets
+- Customer satisfaction (if measured)
+
+### Weekly Review
+
+<AccordionGroup>
+  <Accordion icon="chart-line" title="Performance Analysis">
+    - Review SLA compliance
+    - Identify recurring issues
+    - Analyze resolution times by category
+    - Celebrate wins and identify improvements
+  </Accordion>
+  
+  <Accordion icon="lightbulb" title="Process Improvement">
+    - Discuss common challenges
+    - Update templates if needed
+    - Share successful resolution approaches
+    - Identify training needs
+  </Accordion>
+</AccordionGroup>
+
+## Common Mistakes to Avoid
+
+<Warning>
+  **Don't:**
+  - Leave tickets unattended for days
+  - Update ticket without customer communication
+  - Close tickets before customer confirms resolution
+  - Forget to document actions taken
+  - Promise what you can't deliver
+  - Escalate without proper documentation
+  - Use technical jargon in customer communications
+  - Ignore approaching SLA deadlines
+</Warning>
+
+## Quick Reference Checklist
+
+<Card icon="clipboard-check" title="Before Closing Any Ticket">
+  - [ ] Issue fully resolved
+  - [ ] Customer informed of resolution
+  - [ ] Customer confirmed satisfaction
+  - [ ] All actions documented
+  - [ ] Appropriate tags applied
+  - [ ] SLA met (or exception documented)
+  - [ ] Any follow-up tasks created
+  - [ ] Knowledge base updated if applicable
+</Card>
+
+<Note>
+  Consistent ticket handling ensures customer satisfaction and operational efficiency. When in doubt, document everything and escalate early.
+</Note>
+
