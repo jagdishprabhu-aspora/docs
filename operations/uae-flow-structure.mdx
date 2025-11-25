@@ -1,0 +1,391 @@
+---
+title: "UAE Flow Structure"
+description: "Complete guide to UAE transfer flow from initiation through completion, including Digi9 compliance, VDA, RDA, and failure handling"
+---
+
+## Overview
+
+Understand the complete UAE transfer flow structure from customer initiation through final completion. This guide covers Digi9 compliance checks, Falcon routing, VDA and RDA processing, UTR sharing, CNR handling, and failure scenarios.
+
+## 1. Transfer Initiation
+
+<Card title="Transfer Initiation" icon="play">
+  **What happens:**
+  - The user initiates a transfer on Aspora
+  - The transaction goes through a **mandate compliance check (Digi9)**
+  
+  **Your role:**
+  - Verify the transfer was initiated correctly
+  - Monitor for any immediate errors or blocks
+</Card>
+
+## 2. Digi9 Compliance Check
+
+All UAE transfers must pass Digi9 compliance verification before proceeding to payout.
+
+### If the Transaction Passes
+
+<Check>
+  If the transaction passes Digi9:
+  - Proceeds directly to payout processing
+  - No additional action required from customer
+  - Transfer continues to Falcon for routing
+</Check>
+
+### If Flagged by Digi9
+
+<Warning>
+  If Digi9 flags the transaction, they request additional information from Aspora Compliance.
+</Warning>
+
+#### Possible Digi9 Requests
+
+Digi9 may request:
+- **Source of funds** - Documentation showing where the money originated
+- **Beneficiary details** - Additional information about the recipient
+
+**Digi9 provides a 48-hour TAT** (Turnaround Time) for compliance review.
+
+#### Aspora Operations Action
+
+<Steps>
+  <Step title="Raise RFI to user">
+    Operations team raises an **RFI (Request for Information)** to the user via the app.
+    
+    <Info>
+    RFI notifications appear in the customer's app and require their response.
+    </Info>
+  </Step>
+  
+  <Step title="User response options">
+    The user has two possible responses:
+    
+    - **Provides documents** → Order resumes processing
+    - **Fails/refuses** → Transfer cancelled → Refund initiated
+    
+    <Warning>
+    If the user fails to provide requested documents or refuses, the transfer is automatically cancelled and refunded.
+    </Warning>
+  </Step>
+</Steps>
+
+## 3. Payout Processing (Falcon)
+
+Once compliance checks pass, Falcon routes payouts through one of two methods:
+
+<CardGroup cols={2}>
+  <Card title="VDA (Virtual Direct Account)" icon="credit-card">
+    **Primary routing method**
+    
+    Faster processing, usually minutes to 24 hours
+  </Card>
+  
+  <Card title="RDA (Remittance Direct Account)" icon="building-columns">
+    **Fallback routing method**
+    
+    Used when VDA is unavailable or as backup
+  </Card>
+</CardGroup>
+
+## 4. VDA Flow
+
+### Standard Processing Time
+
+<AccordionGroup>
+  <Accordion icon="clock" title="Normal Processing">
+    - Usually **minutes to 24 hours**
+    - Most transfers complete within this timeframe
+  </Accordion>
+  
+  <Accordion icon="warning" title="Extended Processing">
+    - Can take up to **72 hours** in some cases
+    - Still considered within normal parameters
+  </Accordion>
+</AccordionGroup>
+
+### If VDA Exceeds 72 Hours
+
+<Steps>
+  <Step title="Raise delay ticket">
+    If VDA processing exceeds 72 hours, raise a ticket using this path:
+    
+    ```
+    UAE → Transfer Delay → VDA → Order ID → Falcon ID
+    ```
+    
+    <Warning>
+    Always include both Order ID and Falcon ID when raising delay tickets.
+    </Warning>
+  </Step>
+  
+  <Step title="Monitor resolution">
+    Track the ticket and follow up with operations team if needed.
+  </Step>
+</Steps>
+
+### After VDA Completes
+
+<Steps>
+  <Step title="Share UTR">
+    Once VDA completes, share the **UTR (Unique Transaction Reference)** with the customer.
+    
+    <Info>
+    UTR is the transaction reference number the customer can use to verify with their bank.
+    </Info>
+  </Step>
+  
+  <Step title="Ask customer to wait">
+    Ask the user to wait **3 hours** for the funds to appear in their beneficiary's account.
+    
+    <Tip>
+    Bank processing can take a few hours even after the transfer is complete.
+    </Tip>
+  </Step>
+  
+  <Step title="If funds not received after 3 hours">
+    If funds are still not received after 3 hours:
+    
+    - Request **bank statement (PDF)** from the customer
+    - Verify:
+      - Beneficiary account number matches
+      - UTR is present on the statement
+    
+    <Check>
+    Always verify both account number and UTR before proceeding to CNR.
+    </Check>
+  </Step>
+  
+  <Step title="Raise CNR if needed">
+    If still not reflecting after verification, raise:
+    
+    ```
+    UAE → CNR → VDA → Transferred to correct/wrong account → Order ID → Falcon ID
+    ```
+    
+    <Warning>
+    Specify whether funds were transferred to correct or wrong account based on your verification.
+    </Warning>
+  </Step>
+</Steps>
+
+### After CNR is Raised
+
+<Steps>
+  <Step title="Move parent ticket">
+    Move the parent ticket to **CX BO bin** for operations team handling.
+  </Step>
+  
+  <Step title="Operations checks for reversal">
+    Operations team checks with the bank for possible reversal.
+  </Step>
+  
+  <Step title="Reversal received">
+    Once reversal is received:
+    - Operations team moves the transaction to **RDA rail**
+    - Transfer is reprocessed through RDA
+    - Customer is updated on new processing timeline
+  </Step>
+</Steps>
+
+## 5. RDA Flow
+
+### Standard Processing Time
+
+<Card title="RDA Processing Time" icon="clock">
+  **Up to 24 hours**
+  
+  RDA transfers typically complete within 24 hours of initiation.
+</Card>
+
+### If RDA Exceeds 24 Hours
+
+<Steps>
+  <Step title="Raise delay ticket">
+    If RDA processing exceeds 24 hours, raise:
+    
+    ```
+    UAE → Transfer Delay → RDA → Processing → Order ID → Falcon ID
+    ```
+  </Step>
+  
+  <Step title="Monitor and follow up">
+    Track the ticket and follow up with operations if delay persists.
+  </Step>
+</Steps>
+
+### After RDA Completion
+
+<Steps>
+  <Step title="Share UTR">
+    Share the **UTR** with the customer once RDA completes.
+  </Step>
+  
+  <Step title="Ask to wait 3 hours">
+    Ask customer to wait **3 hours** for funds to appear.
+  </Step>
+  
+  <Step title="If still not received">
+    If funds are still not received:
+    
+    - Request **PDF bank statement**
+    - Verify account number and UTR
+    - Raise CNR if needed using same process as VDA
+  </Step>
+</Steps>
+
+### If Reversal Received
+
+<Card title="RDA Reversal" icon="rotate-left">
+  **What happens:**
+  - If reversal is received from the bank
+  - Falcon marks the transaction as **FAILED**
+  
+  **Your action:**
+  - Verify refund has been initiated
+  - If not, follow failure handling process below
+</Card>
+
+## 6. Final Stage - Failed Transactions
+
+### If Falcon Marks FAILED and Refund Not Initiated
+
+<Steps>
+  <Step title="Verify refund status">
+    Check if refund has been automatically initiated.
+  </Step>
+  
+  <Step title="Raise failure ticket">
+    If refund is not initiated, raise:
+    
+    ```
+    UAE → Failed / Refund Delay → Falcon failed refund not initiated → Order ID → Falcon ID
+    ```
+    
+    <Warning>
+    Always include both Order ID and Falcon ID for proper tracking.
+    </Warning>
+  </Step>
+  
+  <Step title="Move to CX BO bin">
+    Move the parent ticket to **CX BO bin** for operations handling.
+  </Step>
+  
+  <Step title="Monitor refund">
+    Track the ticket until refund is confirmed and customer receives funds.
+  </Step>
+</Steps>
+
+## Complete Flow Diagram
+
+```
+Transfer Initiation
+    ↓
+Digi9 Compliance Check
+    ↓
+    ├─→ Passes → Falcon Routing
+    │
+    └─→ Flagged → RFI to User
+            ↓
+        User Response
+            ↓
+        ├─→ Provides Docs → Resume Processing
+        └─→ Fails/Refuses → Cancel & Refund
+
+Falcon Routing
+    ↓
+    ├─→ VDA (Primary)
+    │   ↓
+    │   Processing (minutes to 72 hrs)
+    │   ↓
+    │   Complete → Share UTR → Wait 3 hrs
+    │   ↓
+    │   ├─→ Funds Received → Complete
+    │   └─→ Not Received → CNR → Reversal → RDA
+    │
+    └─→ RDA (Fallback)
+        ↓
+        Processing (up to 24 hrs)
+        ↓
+        Complete → Share UTR → Wait 3 hrs
+        ↓
+        ├─→ Funds Received → Complete
+        ├─→ Not Received → CNR
+        └─→ Reversal → FAILED → Refund Process
+```
+
+## Key Timelines and SLAs
+
+| Stage | Normal Timeframe | Escalation Threshold | Action Required |
+|-------|-----------------|---------------------|-----------------|
+| **Digi9 Review** | Immediate to 48 hours | >48 hours | Check RFI status |
+| **VDA Processing** | Minutes to 24 hours | >72 hours | Raise delay ticket |
+| **RDA Processing** | Up to 24 hours | >24 hours | Raise delay ticket |
+| **Funds Appearance** | Up to 3 hours after UTR | >3 hours | Request bank statement, verify, CNR if needed |
+| **Refund Processing** | 3-10 business days | >10 business days | Escalate to finance |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion icon="check" title="Always Verify Before CNR">
+    - Never raise CNR without verifying bank statement
+    - Confirm both account number and UTR match
+    - Check if funds were sent to correct or wrong account
+  </Accordion>
+  
+  <Accordion icon="clock" title="Set Proper Expectations">
+    - VDA: Usually minutes to 24 hours, can take up to 72 hours
+    - RDA: Up to 24 hours
+    - Funds appearance: Up to 3 hours after UTR shared
+    - Always add buffer time in communications
+  </Accordion>
+  
+  <Accordion icon="file" title="Document Everything">
+    - Always include Order ID and Falcon ID in tickets
+    - Document UTR sharing with timestamp
+    - Note customer wait times and follow-up dates
+    - Keep bank statements in ticket for reference
+  </Accordion>
+  
+  <Accordion icon="sync" title="Proactive Monitoring">
+    - Check VDA status if >72 hours
+    - Check RDA status if >24 hours
+    - Follow up on CNR tickets regularly
+    - Verify refunds are initiated for failed transactions
+  </Accordion>
+</AccordionGroup>
+
+## Common Scenarios
+
+<AccordionGroup>
+  <Accordion icon="question" title="Customer says Digi9 requested documents but they can't find the request">
+    **Steps:**
+    1. Verify RFI was sent in the system
+    2. Ask customer to check app notifications
+    3. Check if RFI expired (48-hour window)
+    4. If expired, contact operations to resend RFI
+    5. Explain the 48-hour deadline clearly
+  </Accordion>
+  
+  <Accordion icon="question" title="VDA shows complete but customer hasn't received UTR">
+    **Steps:**
+    1. Check Falcon dashboard for UTR
+    2. Retrieve UTR from system
+    3. Share with customer immediately
+    4. Explain 3-hour wait period
+    5. Set follow-up reminder
+  </Accordion>
+  
+  <Accordion icon="question" title="Customer provided bank statement but account number doesn't match">
+    **Steps:**
+    1. Verify the account number in our system
+    2. Compare with bank statement
+    3. If mismatch confirmed, raise CNR as "wrong account"
+    4. Document the discrepancy clearly
+    5. Inform customer of investigation timeline
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Always maintain clear communication with customers throughout the process. Set realistic expectations and follow up proactively to prevent escalations.
+</Note>
+

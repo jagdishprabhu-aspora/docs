@@ -1,0 +1,187 @@
+---
+title: "EUR Ticket Categorization"
+description: "Complete guide for standardizing EUR ticket creation - same structure as UK"
+---
+
+## Overview
+
+EUR ticket categorization follows the **exact same structure as UK**. The only difference is using "EUR →" prefix instead of "UK →".
+
+<Info>
+  All procedures, paths, and requirements are identical to UK. Simply replace "UK" with "EUR" in all ticket paths.
+</Info>
+
+## 1. EUR Verification
+
+<Card title="EUR Verification Ticket" icon="id-card">
+  **Ticket path:**
+  ```
+  EUR → Verification → Sumsub → User ID
+  ```
+  
+  **Use when:**
+  - Manual onboarding review required
+  - Sumsub verification flagged user
+  - Triggered during user onboarding
+</Card>
+
+## 2. EUR Transfer Delay
+
+### 2.1 TRM On Hold
+
+<Card title="TRM On Hold Ticket" icon="pause">
+  **Ticket path:**
+  ```
+  EUR → Transfer Delay → TRM On Hold → Order ID → Falcon ID
+  ```
+</Card>
+
+### 2.2 VDA Processing >72 hrs
+
+<Card title="VDA Delay Ticket" icon="clock">
+  **Ticket path:**
+  ```
+  EUR → Transfer Delay → VDA → Processing → Order ID → Falcon ID
+  ```
+</Card>
+
+### 2.3 RDA On Hold
+
+<Card title="RDA On Hold Ticket" icon="pause">
+  **Ticket path:**
+  ```
+  EUR → Transfer Delay → RDA → On Hold → Order ID → Falcon ID
+  ```
+</Card>
+
+### 2.4 RDA Processing >24 hrs
+
+<Card title="RDA Delay Ticket" icon="clock">
+  **Ticket path:**
+  ```
+  EUR → Transfer Delay → RDA → Processing → Order ID → Falcon ID
+  ```
+</Card>
+
+## 3. EUR CNR
+
+### 3.1 VDA CNR
+
+#### Correct Account
+
+<Card title="VDA CNR - Correct Account" icon="check-circle">
+  **Ticket path:**
+  ```
+  EUR → CNR → VDA → Transferred to correct account → Order ID → Falcon ID
+  ```
+</Card>
+
+#### Wrong Account
+
+<Card title="VDA CNR - Wrong Account" icon="circle-xmark">
+  **Ticket path:**
+  ```
+  EUR → CNR → VDA → Transferred to wrong account → Order ID → Falcon ID
+  ```
+</Card>
+
+### 3.2 RDA CNR
+
+#### Correct Account
+
+<Card title="RDA CNR - Correct Account" icon="check-circle">
+  **Ticket path:**
+  ```
+  EUR → CNR → RDA → Transferred to correct account → Order ID → Falcon ID
+  ```
+</Card>
+
+#### Wrong Account
+
+<Card title="RDA CNR - Wrong Account" icon="circle-xmark">
+  **Ticket path:**
+  ```
+  EUR → CNR → RDA → Transferred to wrong account → Order ID → Falcon ID
+  ```
+</Card>
+
+<Info>
+  PDF bank statement is required for all CNR tickets.
+</Info>
+
+## 4. EUR Failed / Refund Delay
+
+### 4.1 VDA
+
+#### Falcon Failed – Refund Not Initiated
+
+<Card title="VDA Failed - No Refund" icon="circle-xmark">
+  **Ticket path:**
+  ```
+  EUR → Failed / Refund Delay → VDA → Falcon failed refund not initiated → Order ID → Falcon ID
+  ```
+</Card>
+
+#### Refund Completed – User Not Received
+
+<Card title="VDA Refund Not Received" icon="money-bill-wave">
+  **Ticket path:**
+  ```
+  EUR → Failed / Refund Delay → VDA → Refund completed, user not received → Order ID → Falcon ID
+  ```
+</Card>
+
+### 4.2 RDA
+
+#### Falcon Failed – Refund Not Initiated
+
+<Card title="RDA Failed - No Refund" icon="circle-xmark">
+  **Ticket path:**
+  ```
+  EUR → Failed / Refund Delay → RDA → Falcon failed refund not initiated → Order ID → Falcon ID
+  ```
+</Card>
+
+#### Refund Completed – User Not Received
+
+<Card title="RDA Refund Not Received" icon="money-bill-wave">
+  **Ticket path:**
+  ```
+  EUR → Failed / Refund Delay → RDA → Refund completed, user not received → Order ID → Falcon ID
+  ```
+</Card>
+
+## Complete Ticket Path Reference
+
+| Category | Path |
+|----------|------|
+| **Verification** | `EUR → Verification → Sumsub → User ID` |
+| **TRM On Hold** | `EUR → Transfer Delay → TRM On Hold → Order ID → Falcon ID` |
+| **VDA Delay** | `EUR → Transfer Delay → VDA → Processing → Order ID → Falcon ID` |
+| **RDA On Hold** | `EUR → Transfer Delay → RDA → On Hold → Order ID → Falcon ID` |
+| **RDA Delay** | `EUR → Transfer Delay → RDA → Processing → Order ID → Falcon ID` |
+| **VDA CNR Correct** | `EUR → CNR → VDA → Transferred to correct account → Order ID → Falcon ID` |
+| **VDA CNR Wrong** | `EUR → CNR → VDA → Transferred to wrong account → Order ID → Falcon ID` |
+| **RDA CNR Correct** | `EUR → CNR → RDA → Transferred to correct account → Order ID → Falcon ID` |
+| **RDA CNR Wrong** | `EUR → CNR → RDA → Transferred to wrong account → Order ID → Falcon ID` |
+| **VDA Failed No Refund** | `EUR → Failed / Refund Delay → VDA → Falcon failed refund not initiated → Order ID → Falcon ID` |
+| **VDA Refund Not Received** | `EUR → Failed / Refund Delay → VDA → Refund completed, user not received → Order ID → Falcon ID` |
+| **RDA Failed No Refund** | `EUR → Failed / Refund Delay → RDA → Falcon failed refund not initiated → Order ID → Falcon ID` |
+| **RDA Refund Not Received** | `EUR → Failed / Refund Delay → RDA → Refund completed, user not received → Order ID → Falcon ID` |
+
+## Key Points
+
+<CardGroup cols={2}>
+  <Card title="Same as UK" icon="check">
+    All procedures, requirements, and best practices are identical to UK.
+  </Card>
+  
+  <Card title="Only Prefix Differs" icon="info">
+    Simply use "EUR →" instead of "UK →" in all ticket paths.
+  </Card>
+</CardGroup>
+
+<Note>
+  For detailed procedures and best practices, refer to the UK Ticket Categorization guide. All information applies to EUR with the prefix change.
+</Note>
+

@@ -1,0 +1,257 @@
+---
+title: "UK Ticket Categorization"
+description: "Complete guide for standardizing UK ticket creation across verification, transfer delays, CNR, and refund scenarios"
+---
+
+## Overview
+
+Use this comprehensive guide to standardize ticket creation for UK transactions. This covers all ticket categories including verification, transfer delays, CNR (Customer Not Received), and refund scenarios.
+
+<Info>
+  UK ticket categorization follows similar structure to UAE but uses "UK →" prefix and Sumsub for verification.
+</Info>
+
+## 1. Verification
+
+<Card title="UK Verification Ticket" icon="id-card">
+  **Ticket path:**
+  ```
+  UK → Verification → Sumsub → User ID
+  ```
+  
+  **Use when:**
+  - Manual onboarding review required
+  - Sumsub verification flagged user
+  - Triggered during user onboarding
+</Card>
+
+## 2. Transfer Delay
+
+### 2.1 TRM On Hold
+
+<Card title="TRM On Hold Ticket" icon="pause">
+  **Use when:** Internal compliance flag (TRM review)
+  
+  **What it means:** Transaction Risk Management has flagged the transaction for review.
+  
+  **Ticket path:**
+  ```
+  UK → Transfer Delay → TRM On Hold → Order ID → Falcon ID
+  ```
+</Card>
+
+### 2.2 VDA – Processing >72 hrs
+
+<Card title="VDA Delay Ticket" icon="clock">
+  **Use when:** VDA processing exceeds 72 hours
+  
+  **Ticket path:**
+  ```
+  UK → Transfer Delay → VDA → Processing → Order ID → Falcon ID
+  ```
+  
+  <Warning>
+  Always include both Order ID and Falcon ID for proper tracking.
+  </Warning>
+</Card>
+
+### 2.3 RDA On Hold
+
+<Card title="RDA On Hold Ticket" icon="pause">
+  **Use when:** RDA partner requests additional documents
+  
+  **What it means:** RDA partner has put the transfer on hold pending documents.
+  
+  **Ticket path:**
+  ```
+  UK → Transfer Delay → RDA → On Hold → Order ID → Falcon ID
+  ```
+</Card>
+
+### 2.4 RDA Processing >24 hrs
+
+<Card title="RDA Delay Ticket" icon="clock">
+  **Use when:** RDA processing exceeds 24 hours
+  
+  **Ticket path:**
+  ```
+  UK → Transfer Delay → RDA → Processing → Order ID → Falcon ID
+  ```
+</Card>
+
+## 3. UK – Credit Not Received (CNR)
+
+Raise only when Falcon shows **Completed**.
+
+<Warning>
+  Never raise CNR without:
+  1. Verifying Falcon shows "Completed"
+  2. Collecting PDF bank statement from customer
+  3. Verifying account number and UTR
+</Warning>
+
+### 3.1 VDA CNR
+
+#### Correct Account
+
+<Card title="VDA CNR - Correct Account" icon="check-circle">
+  **Use when:**
+  - PDF bank statement provided
+  - Account details match our records
+  - UTR verified on statement
+  
+  **Ticket path:**
+  ```
+  UK → CNR → VDA → Transferred to correct account → Order ID → Falcon ID
+  ```
+</Card>
+
+#### Wrong Account
+
+<Card title="VDA CNR - Wrong Account" icon="circle-xmark">
+  **Use when:**
+  - PDF bank statement provided
+  - Account number doesn't match our records
+  - Correct account number identified
+  
+  **Ticket path:**
+  ```
+  UK → CNR → VDA → Transferred to wrong account → Order ID → Falcon ID
+  ```
+  
+  <Warning>
+  Always include the correct account number in the ticket description.
+  </Warning>
+</Card>
+
+### 3.2 RDA CNR
+
+#### Correct Account
+
+<Card title="RDA CNR - Correct Account" icon="check-circle">
+  **Ticket path:**
+  ```
+  UK → CNR → RDA → Transferred to correct account → Order ID → Falcon ID
+  ```
+</Card>
+
+#### Wrong Account
+
+<Card title="RDA CNR - Wrong Account" icon="circle-xmark">
+  **Ticket path:**
+  ```
+  UK → CNR → RDA → Transferred to wrong account → Order ID → Falcon ID
+  ```
+</Card>
+
+<Info>
+  PDF bank statement is required for all CNR tickets.
+</Info>
+
+## 4. UK – Failed / Refund Delay
+
+### 4.1 VDA
+
+#### Falcon Failed – Refund Not Initiated
+
+<Card title="VDA Failed - No Refund" icon="circle-xmark">
+  **Use when:** VDA shows **Failed** and refund not initiated
+  
+  **Ticket path:**
+  ```
+  UK → Failed / Refund Delay → VDA → Falcon failed refund not initiated → Order ID → Falcon ID
+  ```
+  
+  <Warning>
+  This requires immediate attention. Customer's funds are at risk.
+  </Warning>
+</Card>
+
+#### Refund Completed – User Not Received
+
+<Card title="VDA Refund Not Received" icon="money-bill-wave">
+  **Use when:** Refund completed but user hasn't received it after TAT
+  
+  **Ticket path:**
+  ```
+  UK → Failed / Refund Delay → VDA → Refund completed, user not received → Order ID → Falcon ID
+  ```
+</Card>
+
+### 4.2 RDA
+
+#### Falcon Failed – Refund Not Initiated
+
+<Card title="RDA Failed - No Refund" icon="circle-xmark">
+  **Use when:** RDA shows **Failed** and refund not initiated
+  
+  **Ticket path:**
+  ```
+  UK → Failed / Refund Delay → RDA → Falcon failed refund not initiated → Order ID → Falcon ID
+  ```
+</Card>
+
+#### Refund Completed – User Not Received
+
+<Card title="RDA Refund Not Received" icon="money-bill-wave">
+  **Use when:** Refund completed but user hasn't received it after TAT
+  
+  **Ticket path:**
+  ```
+  UK → Failed / Refund Delay → RDA → Refund completed, user not received → Order ID → Falcon ID
+  ```
+</Card>
+
+## Complete Ticket Path Reference
+
+| Category | Path |
+|----------|------|
+| **Verification** | `UK → Verification → Sumsub → User ID` |
+| **TRM On Hold** | `UK → Transfer Delay → TRM On Hold → Order ID → Falcon ID` |
+| **VDA Delay** | `UK → Transfer Delay → VDA → Processing → Order ID → Falcon ID` |
+| **RDA On Hold** | `UK → Transfer Delay → RDA → On Hold → Order ID → Falcon ID` |
+| **RDA Delay** | `UK → Transfer Delay → RDA → Processing → Order ID → Falcon ID` |
+| **VDA CNR Correct** | `UK → CNR → VDA → Transferred to correct account → Order ID → Falcon ID` |
+| **VDA CNR Wrong** | `UK → CNR → VDA → Transferred to wrong account → Order ID → Falcon ID` |
+| **RDA CNR Correct** | `UK → CNR → RDA → Transferred to correct account → Order ID → Falcon ID` |
+| **RDA CNR Wrong** | `UK → CNR → RDA → Transferred to wrong account → Order ID → Falcon ID` |
+| **VDA Failed No Refund** | `UK → Failed / Refund Delay → VDA → Falcon failed refund not initiated → Order ID → Falcon ID` |
+| **VDA Refund Not Received** | `UK → Failed / Refund Delay → VDA → Refund completed, user not received → Order ID → Falcon ID` |
+| **RDA Failed No Refund** | `UK → Failed / Refund Delay → RDA → Falcon failed refund not initiated → Order ID → Falcon ID` |
+| **RDA Refund Not Received** | `UK → Failed / Refund Delay → RDA → Refund completed, user not received → Order ID → Falcon ID` |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion icon="check" title="Always Verify Before CNR">
+    - Never raise CNR without PDF bank statement
+    - Verify account number matches
+    - Verify UTR is present
+    - Determine if correct or wrong account
+  </Accordion>
+  
+  <Accordion icon="file" title="Include All Required IDs">
+    - Always include Order ID
+    - Always include Falcon ID when available
+    - Include User ID for verification tickets
+    - Double-check IDs before submitting
+  </Accordion>
+  
+  <Accordion icon="clock" title="Check SLAs Before Raising">
+    - VDA: Only raise delay if >72 hours
+    - RDA: Only raise delay if >24 hours
+    - TRM: Monitor but may take time for review
+  </Accordion>
+  
+  <Accordion icon="search" title="Verify Falcon Status">
+    - Always check Falcon status before categorizing
+    - "Completed" = CNR category
+    - "Failed" = Failed/Refund category
+    - "Processing" = Delay category
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  UK ticket categorization follows the same structure as UAE but uses "UK →" prefix and Sumsub for verification instead of EFR.
+</Note>
+

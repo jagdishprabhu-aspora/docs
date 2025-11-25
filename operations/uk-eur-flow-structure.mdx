@@ -1,0 +1,419 @@
+---
+title: "UK & EUR Flow Structure"
+description: "Complete guide to UK and EUR transfer flow from initiation through completion, including TRM compliance, VDA, RDA, and failure handling"
+---
+
+## Overview
+
+Understand the complete UK and EUR transfer flow structure from customer initiation through final completion. This guide covers TRM compliance checks, Falcon routing, VDA and RDA processing, UTR sharing, CNR handling, and failure scenarios.
+
+<Info>
+  UK and EUR flows follow the same structure. The processes are identical, with only regional differences in currency and specific compliance requirements.
+</Info>
+
+## 1. Transfer Initiation
+
+<Card title="Transfer Initiation" icon="play">
+  **What happens:**
+  - User starts a transfer
+  - The transaction goes through internal compliance (**TRM**) review
+  
+  **Your role:**
+  - Verify the transfer was initiated correctly
+  - Monitor for any immediate errors or blocks
+</Card>
+
+## 2. TRM Review
+
+All UK and EUR transfers must pass TRM (Transaction Risk Management) compliance verification before proceeding to payout.
+
+### If TRM Flags the Transaction
+
+<Warning>
+  If TRM flags the transaction, Aspora Compliance raises an RFI (Request for Information).
+</Warning>
+
+<Steps>
+  <Step title="Compliance raises RFI">
+    Aspora Compliance team raises an RFI to the user.
+    
+    <Info>
+    RFI notifications appear in the customer's app and require their response.
+    </Info>
+  </Step>
+  
+  <Step title="User uploads documents">
+    The user uploads the requested compliance documents through the app.
+  </Step>
+  
+  <Step title="User response outcomes">
+    Based on user response:
+    
+    - **If user submits documents** → Transfer continues to processing
+    - **If user fails to provide documents** → Transfer cancelled → Refund issued
+    
+    <Warning>
+    If the user fails to provide requested documents, the transfer is automatically cancelled and refunded.
+    </Warning>
+  </Step>
+</Steps>
+
+### If TRM Passes
+
+<Check>
+  If TRM passes without flags:
+  - Transfer proceeds directly to payout processing
+  - No additional action required from customer
+  - Transfer continues to Falcon for routing
+</Check>
+
+## 3. Payout Processing (Falcon)
+
+Once compliance checks pass, Falcon routes payouts via:
+
+<CardGroup cols={2}>
+  <Card title="VDA (Virtual Direct Account)" icon="credit-card">
+    **Primary routing method**
+    
+    Faster processing, usually minutes to 24 hours
+  </Card>
+  
+  <Card title="RDA (Remittance Direct Account)" icon="building-columns">
+    **Fallback routing method**
+    
+    Used when VDA is unavailable or as backup
+  </Card>
+</CardGroup>
+
+### Exact Same Handling as UAE
+
+UK and EUR transfers follow the exact same handling as UAE for:
+
+- **SLAs** - Same timeframes (VDA: up to 72 hours, RDA: up to 24 hours)
+- **UTR sharing** - Same process for sharing transaction references
+- **Delay ticketing** - Same ticket paths and procedures
+- **CNR** - Same Customer Not Received handling
+- **Reversals** - Same reversal and reprocessing procedures
+- **Failure handling** - Same failure and refund processes
+
+## 4. VDA Flow
+
+### Standard Processing Time
+
+<AccordionGroup>
+  <Accordion icon="clock" title="Normal Processing">
+    - Usually **minutes to 24 hours**
+    - Most transfers complete within this timeframe
+  </Accordion>
+  
+  <Accordion icon="warning" title="Extended Processing">
+    - Can take up to **72 hours** in some cases
+    - Still considered within normal parameters
+  </Accordion>
+</AccordionGroup>
+
+### If VDA Exceeds 72 Hours
+
+<Steps>
+  <Step title="Raise delay ticket">
+    If VDA processing exceeds 72 hours, raise a ticket using this path:
+    
+    ```
+    UK → Transfer Delay → VDA → Processing → Order ID → Falcon ID
+    ```
+    
+    For EUR:
+    ```
+    EUR → Transfer Delay → VDA → Processing → Order ID → Falcon ID
+    ```
+    
+    <Warning>
+    Always include both Order ID and Falcon ID when raising delay tickets.
+    </Warning>
+  </Step>
+  
+  <Step title="Monitor resolution">
+    Track the ticket and follow up with operations team if needed.
+  </Step>
+</Steps>
+
+### After VDA Completes
+
+<Steps>
+  <Step title="Share UTR">
+    Once VDA completes, share the **UTR (Unique Transaction Reference)** with the customer.
+    
+    <Info>
+    UTR is the transaction reference number the customer can use to verify with their bank.
+    </Info>
+  </Step>
+  
+  <Step title="Ask customer to wait">
+    Ask the user to wait **3 hours** for the funds to appear in their beneficiary's account.
+    
+    <Tip>
+    Bank processing can take a few hours even after the transfer is complete.
+    </Tip>
+  </Step>
+  
+  <Step title="If funds not received after 3 hours">
+    If funds are still not received after 3 hours:
+    
+    - Request **bank statement (PDF)** from the customer
+    - Verify:
+      - Beneficiary account number matches
+      - UTR is present on the statement
+    
+    <Check>
+    Always verify both account number and UTR before proceeding to CNR.
+    </Check>
+  </Step>
+  
+  <Step title="Raise CNR if needed">
+    If still not reflecting after verification, raise CNR using the appropriate path (see Ticket Categorization guide).
+  </Step>
+</Steps>
+
+## 5. RDA Flow
+
+### Standard Processing Time
+
+<Card title="RDA Processing Time" icon="clock">
+  **Up to 24 hours**
+  
+  RDA transfers typically complete within 24 hours of initiation.
+</Card>
+
+### If RDA Exceeds 24 Hours
+
+<Steps>
+  <Step title="Raise delay ticket">
+    If RDA processing exceeds 24 hours, raise:
+    
+    ```
+    UK → Transfer Delay → RDA → Processing → Order ID → Falcon ID
+    ```
+    
+    For EUR:
+    ```
+    EUR → Transfer Delay → RDA → Processing → Order ID → Falcon ID
+    ```
+  </Step>
+  
+  <Step title="Monitor and follow up">
+    Track the ticket and follow up with operations if delay persists.
+  </Step>
+</Steps>
+
+### After RDA Completion
+
+<Steps>
+  <Step title="Share UTR">
+    Share the **UTR** with the customer once RDA completes.
+  </Step>
+  
+  <Step title="Ask to wait 3 hours">
+    Ask customer to wait **3 hours** for funds to appear.
+  </Step>
+  
+  <Step title="If still not received">
+    If funds are still not received:
+    
+    - Request **PDF bank statement**
+    - Verify account number and UTR
+    - Raise CNR if needed using the appropriate path
+  </Step>
+</Steps>
+
+### If Reversal Received
+
+<Card title="RDA Reversal" icon="rotate-left">
+  **What happens:**
+  - If reversal is received from the bank
+  - Falcon marks the transaction as **FAILED**
+  
+  **Your action:**
+  - Verify refund has been initiated
+  - If not, follow failure handling process below
+</Card>
+
+## 6. Falcon Failure Handling
+
+### If Falcon Marks FAILED and Refund Not Initiated
+
+<Steps>
+  <Step title="Verify refund status">
+    Check if refund has been automatically initiated.
+  </Step>
+  
+  <Step title="Raise failure ticket">
+    If refund is not initiated, raise:
+    
+    ```
+    UK → Failed / Refund Delay → Falcon failed refund not initiated → Order ID → Falcon ID
+    ```
+    
+    For EUR:
+    ```
+    EUR → Failed / Refund Delay → Falcon failed refund not initiated → Order ID → Falcon ID
+    ```
+    
+    <Warning>
+    Always include both Order ID and Falcon ID for proper tracking.
+    </Warning>
+  </Step>
+  
+  <Step title="Move to CX BO bin">
+    Move the parent ticket to **CX BO bin** for operations handling.
+  </Step>
+  
+  <Step title="Monitor refund">
+    Track the ticket until refund is confirmed and customer receives funds.
+  </Step>
+</Steps>
+
+## Complete Flow Diagram
+
+```
+Transfer Initiation
+    ↓
+TRM Review
+    ↓
+    ├─→ Passes → Falcon Routing
+    │
+    └─→ Flagged → RFI to User
+            ↓
+        User Response
+            ↓
+        ├─→ Submits Docs → Resume Processing
+        └─→ Fails → Cancel & Refund
+
+Falcon Routing
+    ↓
+    ├─→ VDA (Primary)
+    │   ↓
+    │   Processing (minutes to 72 hrs)
+    │   ↓
+    │   Complete → Share UTR → Wait 3 hrs
+    │   ↓
+    │   ├─→ Funds Received → Complete
+    │   └─→ Not Received → CNR
+    │
+    └─→ RDA (Fallback)
+        ↓
+        Processing (up to 24 hrs)
+        ↓
+        Complete → Share UTR → Wait 3 hrs
+        ↓
+        ├─→ Funds Received → Complete
+        ├─→ Not Received → CNR
+        └─→ Reversal → FAILED → Refund Process
+```
+
+## Key Timelines and SLAs
+
+| Stage | Normal Timeframe | Escalation Threshold | Action Required |
+|-------|-----------------|---------------------|-----------------|
+| **TRM Review** | Usually immediate | If flagged, depends on user response | Monitor RFI status |
+| **VDA Processing** | Minutes to 24 hours | >72 hours | Raise delay ticket |
+| **RDA Processing** | Up to 24 hours | >24 hours | Raise delay ticket |
+| **Funds Appearance** | Up to 3 hours after UTR | >3 hours | Request bank statement, verify, CNR if needed |
+| **Refund Processing** | 3-10 business days | >10 business days | Escalate to finance |
+
+## Differences from UAE Flow
+
+<AccordionGroup>
+  <Accordion icon="info" title="Compliance System">
+    **UK/EUR:** Uses TRM (Transaction Risk Management) for compliance checks
+    
+    **UAE:** Uses Digi9 (mandate compliance check)
+    
+    Both serve the same purpose but are different systems.
+  </Accordion>
+  
+  <Accordion icon="check" title="Processing Times">
+    **Same SLAs:**
+    - VDA: Up to 72 hours
+    - RDA: Up to 24 hours
+    - Funds appearance: Up to 3 hours after UTR
+    
+    Processing times are identical across all regions.
+  </Accordion>
+  
+  <Accordion icon="file" title="Ticket Paths">
+    **UK tickets:** Start with "UK →"
+    
+    **EUR tickets:** Start with "EUR →"
+    
+    **UAE tickets:** Start with "UAE →"
+    
+    All other paths are identical.
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion icon="check" title="Always Verify Before CNR">
+    - Never raise CNR without verifying bank statement
+    - Confirm both account number and UTR match
+    - Check if funds were sent to correct or wrong account
+  </Accordion>
+  
+  <Accordion icon="clock" title="Set Proper Expectations">
+    - VDA: Usually minutes to 24 hours, can take up to 72 hours
+    - RDA: Up to 24 hours
+    - Funds appearance: Up to 3 hours after UTR shared
+    - Always add buffer time in communications
+  </Accordion>
+  
+  <Accordion icon="file" title="Document Everything">
+    - Always include Order ID and Falcon ID in tickets
+    - Document UTR sharing with timestamp
+    - Note customer wait times and follow-up dates
+    - Keep bank statements in ticket for reference
+  </Accordion>
+  
+  <Accordion icon="sync" title="Proactive Monitoring">
+    - Check VDA status if >72 hours
+    - Check RDA status if >24 hours
+    - Follow up on CNR tickets regularly
+    - Verify refunds are initiated for failed transactions
+  </Accordion>
+</AccordionGroup>
+
+## Common Scenarios
+
+<AccordionGroup>
+  <Accordion icon="question" title="Customer says TRM requested documents but they can't find the request">
+    **Steps:**
+    1. Verify RFI was sent in the system
+    2. Ask customer to check app notifications
+    3. Check if RFI expired
+    4. If expired, contact operations to resend RFI
+    5. Explain the deadline clearly
+  </Accordion>
+  
+  <Accordion icon="question" title="VDA shows complete but customer hasn't received UTR">
+    **Steps:**
+    1. Check Falcon dashboard for UTR
+    2. Retrieve UTR from system
+    3. Share with customer immediately
+    4. Explain 3-hour wait period
+    5. Set follow-up reminder
+  </Accordion>
+  
+  <Accordion icon="question" title="Customer provided bank statement but account number doesn't match">
+    **Steps:**
+    1. Verify the account number in our system
+    2. Compare with bank statement
+    3. If mismatch confirmed, raise CNR as "wrong account"
+    4. Document the discrepancy clearly
+    5. Inform customer of investigation timeline
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  UK and EUR flows are identical in structure. Always maintain clear communication with customers throughout the process. Set realistic expectations and follow up proactively to prevent escalations.
+</Note>
+

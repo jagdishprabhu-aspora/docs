@@ -1,0 +1,345 @@
+---
+title: "UAE Ticket Categorization"
+description: "Complete SOP for standardizing UAE ticket creation across verification, transaction intake, transfer delays, CNR, and refund scenarios"
+---
+
+## Overview
+
+Use this comprehensive guide to standardize ticket creation for UAE transactions. This SOP covers all ticket categories including verification, transaction intake, transfer delays, CNR (Customer Not Received), and refund scenarios.
+
+<Info>
+  Proper ticket categorization ensures efficient routing, accurate SLA tracking, and faster resolution times.
+</Info>
+
+## Decision Tree
+
+Use this decision tree to determine the correct ticket category:
+
+```
+STEP 1 — Is it an onboarding issue?
+→ Yes → Verification → EFR
+
+STEP 2 — Has a Falcon payout been created?
+→ No → Transaction Request Not Received
+
+STEP 3 — Falcon payout created but still processing?
+→ Yes → Transfer Delay (VDA >72 hrs / RDA >24 hrs)
+
+STEP 4 — Falcon shows Completed?
+→ Yes → Collect PDF → CNR
+
+STEP 5 — Falcon shows Failed?
+→ Refund initiated?
+   No → Failed Refund Not Initiated
+   Yes but user not received → Refund Completed, User Not Received
+```
+
+## 1. Verification Categories
+
+### UAE → Verification → EFR → User ID
+
+<Card title="Verification Ticket Path" icon="id-card">
+  ```
+  UAE → Verification → EFR → User ID
+  ```
+</Card>
+
+**Use when:**
+- Manual onboarding review required
+- EFR / internal compliance flagged user
+- Triggered during **user onboarding**, not transfers
+- Customer cannot complete verification automatically
+
+<Warning>
+  This category is for onboarding issues only. Do not use for transfer-related verification problems.
+</Warning>
+
+## 2. Transaction Request Not Received
+
+Applies when a user initiated a transfer, but **Falcon has NOT created a payout**.
+
+<Info>
+  This means the transfer request exists but hasn't progressed to the payout stage in Falcon.
+</Info>
+
+### 2a) AML Marked for EDD
+
+<Card title="AML EDD Ticket" icon="flag">
+  **Use when:** Sub-status = **Marked for EDD**
+  
+  **What it means:** Compliance needs enhanced due diligence.
+  
+  **Ticket path:**
+  ```
+  UAE → Transaction Request Not Received → AML Marked for EDD → Order ID
+  ```
+</Card>
+
+### 2b) Payment Pending
+
+<Card title="Payment Pending Ticket" icon="clock">
+  **Use when:** Reconciliation is pending (especially manual payment mode)
+  
+  **What it means:** Payment hasn't been received or reconciled yet.
+  
+  **Ticket path:**
+  ```
+  UAE → Transaction Request Not Received → Payment Pending → Order ID
+  ```
+</Card>
+
+### 2c) Transaction Released
+
+<Card title="Transaction Released Ticket" icon="check">
+  **Use when:** Falcon shows **Transaction Released** but payout not progressed
+  
+  **What it means:** Transaction approved but payout hasn't been created.
+  
+  **Ticket path:**
+  ```
+  UAE → Transaction Request Not Received → Transaction Released → Order ID → Falcon ID
+  ```
+  
+  <Warning>
+  Requires Ops follow-up with partners. Always include both Order ID and Falcon ID.
+  </Warning>
+</Card>
+
+## 3. Transfer Delay Categories
+
+Apply once payout **HAS been created** in Falcon.
+
+<Info>
+  These categories are for transfers that are already in the payout pipeline but delayed beyond SLA.
+</Info>
+
+### 3a) VDA – Processing >72 hrs
+
+<Card title="VDA Delay Ticket" icon="clock">
+  **Use when:** VDA processing exceeds 72 hours
+  
+  **Ticket path:**
+  ```
+  UAE → Transfer Delay → VDA → Processing → Order ID → Falcon ID
+  ```
+  
+  <Warning>
+  Always include both Order ID and Falcon ID for proper tracking.
+  </Warning>
+</Card>
+
+### 3b) RDA – On Hold
+
+<Card title="RDA On Hold Ticket" icon="pause">
+  **Use when:** RDA partner requires additional compliance documents
+  
+  **What it means:** RDA partner has put the transfer on hold pending documents.
+  
+  **Ticket path:**
+  ```
+  UAE → Transfer Delay → RDA → On Hold → Order ID → Falcon ID
+  ```
+</Card>
+
+### 3c) RDA – Processing >24 hrs
+
+<Card title="RDA Delay Ticket" icon="clock">
+  **Use when:** RDA processing exceeds 24 hours
+  
+  **Ticket path:**
+  ```
+  UAE → Transfer Delay → RDA → Processing → Order ID → Falcon ID
+  ```
+  
+  <Warning>
+  Always include both Order ID and Falcon ID for proper tracking.
+  </Warning>
+</Card>
+
+## 4. Customer Not Received (CNR)
+
+Used when Falcon shows **Completed** but beneficiary has not received funds.
+
+<Warning>
+  Never raise CNR without first:
+  1. Verifying Falcon shows "Completed"
+  2. Collecting PDF bank statement from customer
+  3. Verifying account number and UTR
+</Warning>
+
+### VDA CNR
+
+#### 4a) Transferred to Correct Account
+
+<Card title="VDA CNR - Correct Account" icon="check-circle">
+  **Use when:**
+  - PDF bank statement required
+  - Account details match our records
+  - UTR verified on statement
+  
+  **Ticket path:**
+  ```
+  UAE → CNR → VDA → Transferred to correct account → Order ID → Falcon ID
+  ```
+</Card>
+
+#### 4b) Transferred to Wrong Account
+
+<Card title="VDA CNR - Wrong Account" icon="circle-xmark">
+  **Use when:**
+  - PDF bank statement provided
+  - Account number doesn't match our records
+  - Correct account number identified
+  
+  **Ticket path:**
+  ```
+  UAE → CNR → VDA → Transferred to wrong account → Order ID → Falcon ID
+  ```
+  
+  <Warning>
+  Always include the correct account number in the ticket description.
+  </Warning>
+</Card>
+
+### RDA CNR
+
+Same logic applies for RDA as VDA.
+
+#### 4c) RDA - Correct Account
+
+<Card title="RDA CNR - Correct Account" icon="check-circle">
+  **Ticket path:**
+  ```
+  UAE → CNR → RDA → Transferred to correct account → Order ID → Falcon ID
+  ```
+</Card>
+
+#### 4d) RDA - Wrong Account
+
+<Card title="RDA CNR - Wrong Account" icon="circle-xmark">
+  **Ticket path:**
+  ```
+  UAE → CNR → RDA → Transferred to wrong account → Order ID → Falcon ID
+  ```
+</Card>
+
+## 5. Failed / Refund Delay Categories
+
+### VDA Failed / Refund
+
+#### 5a) Falcon Failed Refund Not Initiated
+
+<Card title="VDA Failed - No Refund" icon="circle-xmark">
+  **Use when:** VDA shows **Failed** and refund not initiated
+  
+  **Ticket path:**
+  ```
+  UAE → Failed / Refund Delay → VDA → Falcon failed refund not initiated → Order ID → Falcon ID
+  ```
+  
+  <Warning>
+  This requires immediate attention. Customer's funds are at risk.
+  </Warning>
+</Card>
+
+#### 5b) Refund Completed – User Not Received
+
+<Card title="VDA Refund Not Received" icon="money-bill-wave">
+  **Use when:** Refund completed but user hasn't received it after TAT
+  
+  **Ticket path:**
+  ```
+  UAE → Failed / Refund Delay → VDA → Refund completed, user not received → Order ID → Falcon ID
+  ```
+</Card>
+
+### RDA Failed / Refund
+
+#### 5c) Falcon Failed Refund Not Initiated
+
+<Card title="RDA Failed - No Refund" icon="circle-xmark">
+  **Use when:** RDA shows **Failed** and refund not initiated
+  
+  **Ticket path:**
+  ```
+  UAE → Failed / Refund Delay → RDA → Falcon failed refund not initiated → Order ID → Falcon ID
+  ```
+</Card>
+
+#### 5d) Refund Completed – User Not Received
+
+<Card title="RDA Refund Not Received" icon="money-bill-wave">
+  **Use when:** Refund completed but user hasn't received it after TAT
+  
+  **Ticket path:**
+  ```
+  UAE → Failed / Refund Delay → RDA → Refund completed, user not received → Order ID → Falcon ID
+  ```
+</Card>
+
+## Complete Ticket Path Reference
+
+| Category | Path |
+|----------|------|
+| **Verification** | `UAE → Verification → EFR → User ID` |
+| **AML EDD** | `UAE → Transaction Request Not Received → AML Marked for EDD → Order ID` |
+| **Payment Pending** | `UAE → Transaction Request Not Received → Payment Pending → Order ID` |
+| **Transaction Released** | `UAE → Transaction Request Not Received → Transaction Released → Order ID → Falcon ID` |
+| **VDA Delay** | `UAE → Transfer Delay → VDA → Processing → Order ID → Falcon ID` |
+| **RDA On Hold** | `UAE → Transfer Delay → RDA → On Hold → Order ID → Falcon ID` |
+| **RDA Delay** | `UAE → Transfer Delay → RDA → Processing → Order ID → Falcon ID` |
+| **VDA CNR Correct** | `UAE → CNR → VDA → Transferred to correct account → Order ID → Falcon ID` |
+| **VDA CNR Wrong** | `UAE → CNR → VDA → Transferred to wrong account → Order ID → Falcon ID` |
+| **RDA CNR Correct** | `UAE → CNR → RDA → Transferred to correct account → Order ID → Falcon ID` |
+| **RDA CNR Wrong** | `UAE → CNR → RDA → Transferred to wrong account → Order ID → Falcon ID` |
+| **VDA Failed No Refund** | `UAE → Failed / Refund Delay → VDA → Falcon failed refund not initiated → Order ID → Falcon ID` |
+| **VDA Refund Not Received** | `UAE → Failed / Refund Delay → VDA → Refund completed, user not received → Order ID → Falcon ID` |
+| **RDA Failed No Refund** | `UAE → Failed / Refund Delay → RDA → Falcon failed refund not initiated → Order ID → Falcon ID` |
+| **RDA Refund Not Received** | `UAE → Failed / Refund Delay → RDA → Refund completed, user not received → Order ID → Falcon ID` |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion icon="check" title="Always Verify Before CNR">
+    - Never raise CNR without PDF bank statement
+    - Verify account number matches
+    - Verify UTR is present
+    - Determine if correct or wrong account
+  </Accordion>
+  
+  <Accordion icon="file" title="Include All Required IDs">
+    - Always include Order ID
+    - Always include Falcon ID when available
+    - Include User ID for verification tickets
+    - Double-check IDs before submitting
+  </Accordion>
+  
+  <Accordion icon="clock" title="Check SLAs Before Raising">
+    - VDA: Only raise delay if >72 hours
+    - RDA: Only raise delay if >24 hours
+    - Don't raise premature delay tickets
+  </Accordion>
+  
+  <Accordion icon="search" title="Verify Falcon Status">
+    - Always check Falcon status before categorizing
+    - "Completed" = CNR category
+    - "Failed" = Failed/Refund category
+    - "Processing" = Delay category
+  </Accordion>
+</AccordionGroup>
+
+## Common Mistakes to Avoid
+
+<Warning>
+  **Don't:**
+  - Raise CNR without PDF bank statement
+  - Raise delay tickets before SLA threshold
+  - Use verification category for transfer issues
+  - Forget to include Falcon ID when available
+  - Raise duplicate tickets for same issue
+</Warning>
+
+<Note>
+  When in doubt, follow the decision tree at the top of this guide. It will help you determine the correct category for any UAE ticket.
+</Note>
+

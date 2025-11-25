@@ -1,13 +1,13 @@
 ---
 title: "KYC & Verification"
-description: "Verify customer identities for UK and UAE with required documents and approval processes"
+description: "Verify customer identities for UK, EUR, UAE, and USA with required documents and approval processes"
 ---
 
 ## Overview
 
-Learn how to verify customer identities and process KYC (Know Your Customer) documentation for United Kingdom and United Arab Emirates customers. You'll understand document requirements, approval workflows, and how to resolve common verification delays.
+Learn how to verify customer identities and process KYC (Know Your Customer) documentation for United Kingdom, European Union, United Arab Emirates, and United States customers. You'll understand document requirements, approval workflows, manual intervention processes, and how to resolve common verification delays.
 
-## United Kingdom
+## United Kingdom & EUR
 
 ### Documents Required
 
@@ -44,7 +44,7 @@ When you check verification status in AlphaDesk, you'll see one of two states:
     - Customer requires manual KYC review
     - Verification team will review submitted documents
     
-    **Your action:** Inform customer that manual review is in progress and typically completes within 24-48 hours.
+    **Your action:** Follow the manual intervention process outlined below.
   </Accordion>
 </AccordionGroup>
 
@@ -54,10 +54,45 @@ When you check verification status in AlphaDesk, you'll see one of two states:
   The following issues commonly cause verification delays:
 </Warning>
 
-- **Mismatch between documents and selfie** - Photo doesn't match passport image
+- **Mismatched documents and selfies** - Photo doesn't match passport image
 - **Multiple accounts detected** - Customer has more than one account in the system
 - **Expired passport or invalid selfie** - Documents don't meet validity requirements
 - **Region not acceptable** - Customer location not supported
+
+### Manual Intervention Process for UK & EUR
+
+If a verification is pending and requires manual intervention, you need to raise a BO (Back Office) ticket.
+
+<Steps>
+  <Step title="Check for existing ticket">
+    Before creating a new BO ticket, always check whether one already exists for the same issue.
+    
+    <Warning>
+    Duplicate tickets create confusion and slow down resolution. Always verify first.
+    </Warning>
+  </Step>
+  
+  <Step title="Create BO ticket">
+    Create a new BO ticket using the following path:
+    
+    ```
+    UK → Verification → Sumsub
+    ```
+    
+    For EUR region, use:
+    ```
+    EUR → Verification → Sumsub
+    ```
+  </Step>
+  
+  <Step title="Move parent ticket">
+    Once the BO ticket is created, move the CX parent ticket to the **CX BO bin**.
+    
+    <Check>
+    This ensures proper tracking and prevents duplicate work.
+    </Check>
+  </Step>
+</Steps>
 
 ## United Arab Emirates
 
@@ -83,6 +118,8 @@ UAE customers are automatically verified through **EFR** (Emirates Fast Registra
   EFR verification typically completes within minutes when documents are valid and customer passes compliance checks.
 </Check>
 
+**Status:** Verified via EFR
+
 ### Common Delay Reasons
 
 <Warning>
@@ -91,6 +128,130 @@ UAE customers are automatically verified through **EFR** (Emirates Fast Registra
 
 - **Customer not accepted due to compliance** - Failed compliance checks
 - **User located outside UAE** - Customer's location is outside United Arab Emirates
+
+### Manual Intervention Process for UAE
+
+If a verification is pending and requires manual intervention, you need to raise a BO (Back Office) ticket.
+
+<Steps>
+  <Step title="Check for existing ticket">
+    Before creating a new BO ticket, always check whether one already exists for the same issue.
+    
+    <Warning>
+    Duplicate tickets create confusion and slow down resolution. Always verify first.
+    </Warning>
+  </Step>
+  
+  <Step title="Create BO ticket">
+    Create a new BO ticket using the following path:
+    
+    ```
+    UAE → Verification → EFR → User ID
+    ```
+  </Step>
+  
+  <Step title="Move parent ticket">
+    Once the BO ticket is created, move the CX parent ticket to the **CX BO bin**.
+    
+    <Check>
+    This ensures proper tracking and prevents duplicate work.
+    </Check>
+  </Step>
+</Steps>
+
+## United States
+
+The USA region has a two-tier KYC system that allows different levels of verification based on transfer amounts.
+
+### User Tiers: KYC Levels
+
+We have two levels of KYC for US customers:
+
+<CardGroup cols={2}>
+  <Card title="Basic KYC" icon="user">
+    Allows transfers up to **$3,000**
+    
+    Does NOT require passport or selfie
+  </Card>
+  
+  <Card title="Full KYC" icon="user-check">
+    Required for transfers over **$3,000**
+    
+    Requires selfie and valid ID
+  </Card>
+</CardGroup>
+
+### Basic KYC Process
+
+<Accordion title="Basic KYC Requirements" icon="info">
+  **What it allows:**
+  - Transfers up to **$3,000**
+  - Does **NOT** require a passport or selfie
+  - Simpler verification process
+</Accordion>
+
+#### If the User Passes Basic KYC
+
+<Check>
+  The user is allowed to send transfers up to **$3,000** without additional verification.
+</Check>
+
+#### If Basic KYC is Rejected
+
+<Warning>
+  If Basic KYC is rejected, the user **must proceed with Full KYC** to continue using the service.
+</Warning>
+
+### Full KYC Process
+
+#### Full KYC Requirements
+
+<AccordionGroup>
+  <Accordion icon="camera" title="Selfie Required">
+    A live selfie is required for Full KYC verification.
+  </Accordion>
+  
+  <Accordion icon="id-card" title="Valid ID Required">
+    Customer must provide one of the following:
+    - Valid passport
+    - Valid driver's license
+  </Accordion>
+  
+  <Accordion icon="shield" title="Verification Provider">
+    Verification is completed through **Persona**.
+    
+    <Info>
+    Persona is a third-party identity verification service used for US customer verification.
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+#### If Full KYC is Rejected
+
+<Steps>
+  <Step title="Review rejection reason">
+    Check the rejection reason in the system. Common reasons include:
+    - Incorrect or mismatched documents
+    - Poor quality photos
+    - Expired identification
+    - Name mismatch between documents
+  </Step>
+  
+  <Step title="Inform the user">
+    Explain to the user what went wrong in clear, non-technical language.
+    
+    <Tip>
+    Be specific about what needs to be corrected (e.g., "The selfie doesn't match your ID photo" rather than just "verification failed").
+    </Tip>
+  </Step>
+  
+  <Step title="Guide on next steps">
+    Provide clear instructions on how to resubmit:
+    - What documents to provide
+    - How to take better photos
+    - When they can try again
+  </Step>
+</Steps>
 
 ## Best Practices
 
@@ -104,10 +265,31 @@ Follow these guidelines to help customers complete verification successfully:
   - Confirm customer's location matches regional requirements
 </Tip>
 
-### When assisting customers
+### When Assisting Customers
 
-1. Ask customers to take photos in good lighting
-2. Ensure all four corners of documents are visible
-3. Verify the selfie is recent and matches the ID photo
-4. Double-check expiry dates before submission to avoid delays
+<Steps>
+  <Step title="Guide document capture">
+    Ask customers to take photos in good lighting with all four corners of documents visible.
+  </Step>
+  
+  <Step title="Verify selfie quality">
+    Ensure the selfie is recent and clearly matches the ID photo.
+  </Step>
+  
+  <Step title="Check expiry dates">
+    Double-check expiry dates before submission to avoid delays.
+  </Step>
+  
+  <Step title="Confirm regional requirements">
+    Verify the customer meets location requirements for their region.
+  </Step>
+</Steps>
 
+### Regional Summary
+
+| Region | Documents Required | Verification Method | Manual Intervention Path |
+|--------|-------------------|---------------------|-------------------------|
+| **UK** | Passport (≥6 months), Live selfie | Sumsub | UK → Verification → Sumsub |
+| **EUR** | Passport (≥6 months), Live selfie | Sumsub | EUR → Verification → Sumsub |
+| **UAE** | Emirates ID (≥3 months), Live selfie | EFR | UAE → Verification → EFR → User ID |
+| **USA** | Basic: None<br>Full: Passport/Driver's License + Selfie | Persona | N/A (handled via Persona) |

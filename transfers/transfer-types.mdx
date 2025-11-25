@@ -1,18 +1,25 @@
 ---
 title: "Transfer Types"
-description: "Understand and explain available transfer methods for UK and UAE customers"
+description: "Understand and explain available transfer methods for UK, EUR, UAE, and USA customers"
 ---
 
 ## Overview
 
 Help customers choose the right transfer method for their needs. You'll learn the available options for each region, processing times, and how to recommend the best method based on customer requirements.
 
-## United Kingdom
+## United Kingdom & EUR
+
+UK and EUR regions use the same transfer method.
 
 ### Manual Bank Transfer
 
-<Card title="UK Manual Bank Transfer" icon="building-columns">
+<Card title="UK/EUR Manual Bank Transfer" icon="building-columns">
   **How it works:**
+  - User initiates the transfer
+  - User sends funds through their bank
+  - Aspora receives and processes the transfer
+  
+  **Process details:**
   - Customer creates a transfer order in the Aspora app
   - System provides Aspora's bank details
   - Customer completes the bank transfer independently
@@ -116,22 +123,44 @@ UAE customers have **three** transfer methods available:
   - Alternative to card or direct pay methods
 </Card>
 
+## United States
+
+US transfers use a different flow with Plaid bank connection. See the [US Transfer Flow](/transfers/us-transfer-flow) guide for complete details.
+
+<Card title="US Transfer Method" icon="flag-usa">
+  **How it works:**
+  - User adds beneficiary and enters amount
+  - User connects bank account via **Plaid**
+  - Transfer is submitted and processed
+  - Timeline varies based on US banking settlement periods
+  
+  **Key features:**
+  - Secure bank connection via Plaid
+  - Real-time progress tracking
+  - Estimated delivery timeline shown
+  
+  **For complete US transfer flow details, see:** [US Transfer Flow Guide](/transfers/us-transfer-flow)
+</Card>
+
 ## Comparison Table
 
 | Transfer Type | Region | Payment Speed | Customer Action | Processing |
 |---------------|--------|---------------|-----------------|------------|
-| **Manual Bank Transfer** | UK | Moderate | Initiates bank transfer | After funds received |
+| **Manual Bank Transfer** | UK, EUR | Moderate | Initiates bank transfer | After funds received |
 | **Debit Card (Checkout)** | UAE | Fast | Enters card details | Immediate |
 | **Aspora Direct Pay** | UAE | Fast | Authorizes via Leantech | Near-immediate |
 | **UAE Manual Transfer** | UAE | Moderate | Initiates bank transfer | After funds received |
+| **Plaid Bank Connection** | USA | Moderate to Fast | Connects bank via Plaid | Varies by bank settlement |
 
 ## Choosing the Right Method
 
-### For UK Customers
+### For UK & EUR Customers
 
 <Info>
-  UK customers have one primary option:
+  UK and EUR customers have one primary option:
   - **Manual Bank Transfer** - Standard method requiring customer to send funds via their bank
+  
+  Both regions use identical processes and workflows.
 </Info>
 
 ### For UAE Customers

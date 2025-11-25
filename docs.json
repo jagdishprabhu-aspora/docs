@@ -30,7 +30,8 @@
             "pages": [
               "transfers/transfer-types",
               "transfers/transfer-fees-limits",
-              "transfers/referrals"
+              "transfers/referrals",
+              "transfers/us-transfer-flow"
             ]
           },
           {
@@ -38,13 +39,18 @@
             "pages": [
               "operations/alpha-desk",
               "operations/order-handling",
-              "operations/payment-status"
+              "operations/payment-status",
+              "operations/uae-flow-structure",
+              "operations/uk-eur-flow-structure"
             ]
           },
           {
             "group": "Ticket Management",
             "pages": [
-              "tickets/operations-tickets"
+              "tickets/operations-tickets",
+              "tickets/uae-ticket-categorization",
+              "tickets/uk-ticket-categorization",
+              "tickets/eur-ticket-categorization"
             ]
           }
         ]
