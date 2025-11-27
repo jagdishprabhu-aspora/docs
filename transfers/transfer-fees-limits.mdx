@@ -14,12 +14,12 @@ Use this guide to calculate transfer fees and verify daily transaction limits fo
 <CardGroup cols={2}>
   <Card title="Fee Calculation" icon="calculator">
     **£3 or 0.3%**
-    
+
     Whichever is lower applies
   </Card>
   <Card title="Per Transfer Fee" icon="money-bill">
     **£5 per transfer**
-    
+
     Applied to each transaction
   </Card>
 </CardGroup>
@@ -28,9 +28,9 @@ Use this guide to calculate transfer fees and verify daily transaction limits fo
 
 <Accordion title="Daily Limit" icon="calendar-day">
   **£400,000 per day**
-  
+
   Maximum amount that can be transferred in a single day
-  
+
   <Note>
     No restriction on the number of daily transfers
   </Note>
@@ -43,20 +43,19 @@ Use these examples when explaining fees to customers:
 <AccordionGroup>
   <Accordion title="Example 1: £1,000 Transfer" icon="calculator">
     **Calculation:**
+
     - Transfer Amount: £1,000
     - 0.3% of £1,000 = £3
-    - Compare: £3 vs fixed £3 minimum
-    - **Fee Applied: £3** (lower amount) + **£5 per transfer fee**
-    - **Total Fee: £8**
+    - **Total Fee: £3**
   </Accordion>
-  
   <Accordion title="Example 2: £5,000 Transfer" icon="calculator">
     **Calculation:**
+
     - Transfer Amount: £5,000
     - 0.3% of £5,000 = £15
     - Compare: £15 vs fixed £3 minimum
-    - **Fee Applied: £3** (minimum applies) + **£5 per transfer fee**
-    - **Total Fee: £8**
+    - **Fee Applied: £3** (minimum applies) 
+    - **Total Fee: £3**
   </Accordion>
 </AccordionGroup>
 
@@ -69,8 +68,9 @@ Use these examples when explaining fees to customers:
 ### Fee Structure
 
 <Card title="Transfer Fee" icon="tag">
-  <div style={{fontSize: '24px', fontWeight: 'bold', color: '#16A34A'}}>FREE</div>
-  
+  <div style={{ type:"mdxJsxAttributeValueExpression",value:"{fontSize: '24px', fontWeight: 'bold', color: '#16A34A'}",data:{estree:{type:"Program",start:1847,end:1903,body:[{type:"ExpressionStatement",expression:{type:"ObjectExpression",start:1847,end:1903,loc:{start:{line:72,column:14,offset:1847},end:{line:72,column:70,offset:1903}},properties:[{type:"Property",start:1848,end:1864,loc:{start:{line:72,column:15,offset:1848},end:{line:72,column:31,offset:1864}},method:false,shorthand:false,computed:false,key:{type:"Identifier",start:1848,end:1856,loc:{start:{line:72,column:15,offset:1848},end:{line:72,column:23,offset:1856}},name:"fontSize",range:[1848,1856]},value:{type:"Literal",start:1858,end:1864,loc:{start:{line:72,column:25,offset:1858},end:{line:72,column:31,offset:1864}},value:"24px",raw:"'24px'",range:[1858,1864]},kind:"init",range:[1848,1864]},{type:"Property",start:1866,end:1884,loc:{start:{line:72,column:33,offset:1866},end:{line:72,column:51,offset:1884}},method:false,shorthand:false,computed:false,key:{type:"Identifier",start:1866,end:1876,loc:{start:{line:72,column:33,offset:1866},end:{line:72,column:43,offset:1876}},name:"fontWeight",range:[1866,1876]},value:{type:"Literal",start:1878,end:1884,loc:{start:{line:72,column:45,offset:1878},end:{line:72,column:51,offset:1884}},value:"bold",raw:"'bold'",range:[1878,1884]},kind:"init",range:[1866,1884]},{type:"Property",start:1886,end:1902,loc:{start:{line:72,column:53,offset:1886},end:{line:72,column:69,offset:1902}},method:false,shorthand:false,computed:false,key:{type:"Identifier",start:1886,end:1891,loc:{start:{line:72,column:53,offset:1886},end:{line:72,column:58,offset:1891}},name:"color",range:[1886,1891]},value:{type:"Literal",start:1893,end:1902,loc:{start:{line:72,column:60,offset:1893},end:{line:72,column:69,offset:1902}},value:"#16A34A",raw:"'#16A34A'",range:[1893,1902]},kind:"init",range:[1886,1902]}],range:[1847,1903]},start:1847,end:1903,loc:{start:{line:72,column:14,offset:1847},end:{line:72,column:70,offset:1903}},range:[1847,1903]}],sourceType:"module",comments:[],loc:{start:{line:72,column:14,offset:1847},end:{line:72,column:70,offset:1903}},range:[1847,1903]}} }}>
+  FREE</div>
+
   No fees charged on transfers
 </Card>
 
@@ -78,9 +78,9 @@ Use these examples when explaining fees to customers:
 
 <Accordion title="Daily Limit" icon="calendar-day">
   **AED 140,000 per day**
-  
+
   Maximum cumulative amount for the day
-  
+
   <Note>
     This limit applies to **single or multiple transfers** combined
   </Note>
@@ -90,6 +90,7 @@ Use these examples when explaining fees to customers:
 
 <Warning>
   **When explaining limits to UAE customers:**
+
   - The AED 140,000 limit is cumulative across all transfers
   - Example: If they transfer AED 70,000 in the morning, they can only transfer up to AED 70,000 more that day
   - Limits reset at midnight UAE time (GST)
@@ -102,23 +103,22 @@ Use these examples when explaining fees to customers:
 
 ## Comparison Table
 
-| Feature | United Kingdom | United Arab Emirates |
-|---------|----------------|---------------------|
-| **Transfer Fee** | £3 or 0.3% (lower) + £5/transfer | Free |
-| **Daily Limit** | £400,000 | AED 140,000 |
-| **Transfer Count Limit** | No restriction | No restriction |
-| **Cumulative Limit** | No | Yes |
+| Feature                  | United Kingdom     | United Arab Emirates |
+| ------------------------ | ------------------ | -------------------- |
+| **Transfer Fee**         | £3 or 0.3% (lower) | Free                 |
+| **Daily Limit**          | £400,000           | AED 140,000          |
+| **Transfer Count Limit** | No restriction     | No restriction       |
+| **Cumulative Limit**     | No                 | Yes                  |
 
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion icon="check" title="For UK Customers">
+  <Accordion title="For UK Customers" icon="check">
     - Inform customers about the fee structure upfront
     - Calculate fees before confirming transfers
-    - Explain that £3 or 0.3% (whichever is lower) applies, plus £5 per transfer
+    - Explain that £3 or 0.3% (whichever is lower) applies.
   </Accordion>
-  
-  <Accordion icon="check" title="For UAE Customers">
+  <Accordion title="For UAE Customers" icon="check">
     - Emphasize that transfers are free
     - Monitor daily cumulative amounts to avoid exceeding limits
     - Inform customers about the AED 140,000 daily cap
@@ -128,16 +128,13 @@ Use these examples when explaining fees to customers:
 ## Frequently Asked Questions
 
 <AccordionGroup>
-  <Accordion icon="question" title="Can I split a large transfer into multiple smaller ones?">
+  <Accordion title="Can I split a large transfer into multiple smaller ones?" icon="question">
     Yes, for UK there's no limit on number of transfers. For UAE, ensure the cumulative amount doesn't exceed AED 140,000 per day.
   </Accordion>
-  
-  <Accordion icon="question" title="When does the daily limit reset?">
+  <Accordion title="When does the daily limit reset?" icon="question">
     The daily limit resets at midnight in the respective timezone (GMT for UK, GST for UAE).
   </Accordion>
-  
-  <Accordion icon="question" title="Are there any additional fees?">
+  <Accordion title="Are there any additional fees?" icon="question">
     The fees listed are the standard transfer fees. Additional fees may apply based on specific payment methods or circumstances.
   </Accordion>
 </AccordionGroup>
-

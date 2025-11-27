@@ -29,30 +29,27 @@ Follow these steps to log in securely:
 <Steps>
   <Step title="Connect to VPN">
     Launch Pritunl VPN client and establish a secure connection.
-    
+
     <Warning>
       You must be connected to VPN before accessing Alpha Desk. Verify your connection is active before proceeding.
     </Warning>
-    
     <Check>
-    Look for the Pritunl icon in your system tray showing an active connection.
+      Look for the Pritunl icon in your system tray showing an active connection.
     </Check>
   </Step>
-  
   <Step title="Navigate to Alpha Desk">
     Open your browser and go to the Alpha Desk login page.
   </Step>
-  
   <Step title="Enter your credentials">
     Log in using your assigned credentials:
+
     - **Phone number** (provided during onboarding)
     - **Password** (set during first login)
-    
+
     <Tip>
-    Keep your credentials secure and never share them with others. Contact your team lead if you've forgotten your password.
+      Keep your credentials secure and never share them with others. Contact your team lead if you've forgotten your password.
     </Tip>
   </Step>
-  
   <Step title="Access the dashboard">
     Click login to access your Alpha Desk dashboard and begin working with customer orders.
   </Step>
@@ -66,11 +63,13 @@ Alpha Desk provides multiple search methods to quickly locate customer informati
 
 <Card title="User Search" icon="user">
   **Search by:**
+
   - User ID
   - Phone number
   - Email address
-  
+
   **Use for:**
+
   - Finding customer profiles
   - Viewing customer information
   - Accessing customer history
@@ -80,9 +79,11 @@ Alpha Desk provides multiple search methods to quickly locate customer informati
 
 <Card title="App Server Orders" icon="mobile">
   **Search by:**
+
   - Order ID
-  
+
   **Use for:**
+
   - Tracking specific orders
   - Viewing order details
   - Checking order status
@@ -92,10 +93,12 @@ Alpha Desk provides multiple search methods to quickly locate customer informati
 
 <Card title="LULU System" icon="receipt">
   **Search by:**
+
   - LR (LULU Reference)
   - LULU ID
-  
+
   **Use for:**
+
   - UK order tracking
   - Payment verification
   - Transaction status checks
@@ -105,9 +108,11 @@ Alpha Desk provides multiple search methods to quickly locate customer informati
 
 <Card title="Goms System" icon="list">
   **Search by:**
+
   - US Order ID
-  
+
   **Use for:**
+
   - Specific order system queries
   - Cross-reference verification
 </Card>
@@ -120,11 +125,13 @@ Alpha Desk provides specialized dashboards for different operational needs:
 
 <Accordion title="Falcon Dashboard" icon="bird">
   **Purpose:**
+
   - Primary dashboard for order management
   - Workflow monitoring
   - UAE operations (RDA and VDA)
-  
+
   **Features:**
+
   - Real-time order status
   - Workflow tracking
   - Performance metrics
@@ -134,11 +141,13 @@ Alpha Desk provides specialized dashboards for different operational needs:
 
 <Accordion title="Beneficiary Verification Dashboard" icon="user-check">
   **Purpose:**
+
   - Verify beneficiary details
   - Check beneficiary account information
   - Validate recipient data
-  
+
   **Features:**
+
   - Beneficiary lookup
   - Account verification status
   - Historical verification records
@@ -147,28 +156,25 @@ Alpha Desk provides specialized dashboards for different operational needs:
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion icon="check" title="Before You Start">
+  <Accordion title="Before You Start" icon="check">
     - Always connect to VPN first
     - Verify your credentials are active
     - Ensure you have necessary permissions
     - Have customer information ready before searching
   </Accordion>
-  
-  <Accordion icon="search" title="Effective Searching">
-    - Use the most specific identifier available (Order ID > User ID > Email)
+  <Accordion title="Effective Searching" icon="search">
+    - Use the most specific identifier available (Order ID \> User ID \> Email)
     - Double-check spelling and formatting
     - Try alternative search methods if first search returns no results
     - Use phone numbers with proper country codes
   </Accordion>
-  
-  <Accordion icon="shield" title="Security">
+  <Accordion title="Security" icon="shield">
     - Never share your login credentials
     - Always log out when finished
     - Disconnect VPN when not using Alpha Desk
     - Report any unauthorized access immediately
   </Accordion>
-  
-  <Accordion icon="clock" title="Efficiency Tips">
+  <Accordion title="Efficiency Tips" icon="clock">
     - Keep Order IDs and User IDs handy
     - Use browser bookmarks for quick access
     - Learn keyboard shortcuts where available
@@ -184,15 +190,12 @@ Alpha Desk provides specialized dashboards for different operational needs:
   <Step title="Get Order ID">
     Ask customer for their Order ID or reference number
   </Step>
-  
   <Step title="Search App Server Orders">
     Enter Order ID in App Server Orders search
   </Step>
-  
   <Step title="Review Details">
     Check order status, payment status, and any issues
   </Step>
-  
   <Step title="Provide Update">
     Inform customer based on findings
   </Step>
@@ -204,16 +207,13 @@ Alpha Desk provides specialized dashboards for different operational needs:
   <Step title="Identify Region">
     Determine if UK (LULU) or UAE (Goms/Falcon)
   </Step>
-  
   <Step title="Use Appropriate System">
     - UK: Search in LULU using LR or LULU ID
     - UAE: Use Falcon dashboard
   </Step>
-  
   <Step title="Verify Payment Status">
     Check payment received and processing status
   </Step>
-  
   <Step title="Take Action">
     Process according to payment status
   </Step>
@@ -225,15 +225,12 @@ Alpha Desk provides specialized dashboards for different operational needs:
   <Step title="Collect Identifier">
     Get User ID, phone, or email from customer
   </Step>
-  
   <Step title="User Search">
     Search in User Search section
   </Step>
-  
   <Step title="Review Profile">
     Check KYC status, order history, account details
   </Step>
-  
   <Step title="Address Query">
     Resolve customer's issue based on profile information
   </Step>
@@ -242,37 +239,41 @@ Alpha Desk provides specialized dashboards for different operational needs:
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion icon="triangle-exclamation" title="Cannot Access Alpha Desk">
+  <Accordion title="Cannot Access Alpha Desk" icon="triangle-exclamation">
     **Possible causes:**
+
     - VPN not connected
     - Incorrect credentials
     - Access permissions not granted
-    
+
     **Solution:**
+
     1. Verify VPN connection via Pritunl
     2. Confirm credentials with team lead
     3. Request access if permissions missing
   </Accordion>
-  
-  <Accordion icon="triangle-exclamation" title="Search Returns No Results">
+  <Accordion title="Search Returns No Results" icon="triangle-exclamation">
     **Possible causes:**
+
     - Incorrect ID or typo
     - Wrong search method used
     - Order not yet in system
-    
+
     **Solution:**
+
     1. Verify the search term with customer
     2. Try alternative search methods
     3. Check if order was recently created
   </Accordion>
-  
-  <Accordion icon="triangle-exclamation" title="Dashboard Not Loading">
+  <Accordion title="Dashboard Not Loading" icon="triangle-exclamation">
     **Possible causes:**
+
     - Network connectivity issues
     - VPN connection dropped
     - System maintenance
-    
+
     **Solution:**
+
     1. Check VPN connection
     2. Refresh the page
     3. Check for system status updates
@@ -281,15 +282,14 @@ Alpha Desk provides specialized dashboards for different operational needs:
 
 ## Quick Reference
 
-| Need to Find | Use This Search | Required Info |
-|--------------|----------------|---------------|
-| Customer details | User Search | User ID, Phone, or Email |
-| Order status | App Server Orders | Order ID |
-| UK payment | LULU | LR or LULU ID |
-| UAE order | Goms Orders | US Order ID |
-| Beneficiary info | Beneficiary Verification | Beneficiary details |
+| Need to Find     | Use This Search          | Required Info            |
+| ---------------- | ------------------------ | ------------------------ |
+| Customer details | User Search              | User ID, Phone, or Email |
+| Order status     | App Server Orders        | Order ID                 |
+| UK payment       | LULU                     | LR or LULU ID            |
+| UAE order        | Goms Orders              | US Order ID              |
+| Beneficiary info | Beneficiary Verification | Beneficiary details      |
 
 <Note>
   **Remember:** Always ensure VPN is connected before attempting to access Alpha Desk.
 </Note>
-
