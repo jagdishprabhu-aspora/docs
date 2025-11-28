@@ -7,15 +7,19 @@ description: "Complete guide to US transfer flow from initiation through complet
 
 Understand the complete US transfer flow from customer initiation through final completion. US transfers use Plaid for bank account connection and have specific timelines based on US banking settlement periods.
 
+![Screenshot2025 11 28at6 00 45PM Pn](/images/Screenshot2025-11-28at6.00.45PM.png)
+
 ## 1. Initiating a Transfer
 
 <Card title="Transfer Initiation" icon="play">
   **What the user does:**
+
   - User begins by adding a beneficiary
-  - Enters the amount they want to send (e.g., $5)
+  - Enters the amount they want to send (e.g., \$5)
   - Selects **Send Now** to proceed
-  
+
   **Your role:**
+
   - Verify the transfer was initiated correctly
   - Monitor for any immediate errors or blocks
 </Card>
@@ -24,10 +28,12 @@ Understand the complete US transfer flow from customer initiation through final 
 
 <Card title="Summary Page" icon="file-lines">
   **What appears:**
+
   - The summary page shows the estimated delivery timeline
   - Timelines may vary based on U.S. banking settlement periods
-  
+
   **Your role:**
+
   - Explain to customers that timelines are estimates
   - Set expectations based on banking settlement periods
   - Note that actual delivery may vary
@@ -41,10 +47,12 @@ Understand the complete US transfer flow from customer initiation through final 
 
 <Card title="Bank Account Connection" icon="link">
   **What happens:**
+
   - Users link their bank account via **Plaid**
   - Plaid is a secure third-party service for bank connections
-  
+
   **Your role:**
+
   - Explain Plaid is secure and trusted
   - Guide customers through the connection process if needed
   - Troubleshoot connection issues
@@ -53,16 +61,15 @@ Understand the complete US transfer flow from customer initiation through final 
 ### About Plaid
 
 <AccordionGroup>
-  <Accordion icon="shield" title="Security">
+  <Accordion title="Security" icon="shield">
     Plaid uses bank-grade security and encryption. Customer credentials are never shared with Aspora.
   </Accordion>
-  
-  <Accordion icon="check" title="Supported Banks">
+  <Accordion title="Supported Banks" icon="check">
     Plaid supports thousands of US banks and financial institutions. Most major banks are supported.
   </Accordion>
-  
-  <Accordion icon="question" title="Connection Issues">
+  <Accordion title="Connection Issues" icon="question">
     If a customer's bank isn't supported or connection fails:
+
     - Verify bank is in Plaid's supported list
     - Check for bank maintenance or outages
     - Suggest customer contact their bank if persistent issues
@@ -73,10 +80,12 @@ Understand the complete US transfer flow from customer initiation through final 
 
 <Card title="Transfer Submission" icon="paper-plane">
   **What happens:**
+
   - When the user confirms **Send Now**, the transfer is submitted
   - A progress timeline is displayed, including possible delays
-  
+
   **Your role:**
+
   - Monitor transfer status
   - Explain the progress timeline to customers
   - Address any concerns about delays
@@ -87,29 +96,25 @@ Understand the complete US transfer flow from customer initiation through final 
 <Steps>
   <Step title="Transfer submitted">
     Transfer is submitted to processing system.
-    
+
     <Check>
-    Customer sees confirmation that transfer was submitted.
+      Customer sees confirmation that transfer was submitted.
     </Check>
   </Step>
-  
   <Step title="Bank connection verified">
     Plaid verifies the bank account connection.
   </Step>
-  
   <Step title="Funds authorization">
     Bank authorizes the funds transfer.
   </Step>
-  
   <Step title="Processing">
     Transfer is processed through the payment network.
   </Step>
-  
   <Step title="Settlement">
     Funds settle through US banking system.
-    
+
     <Info>
-    Settlement periods can vary based on US banking schedules and holidays.
+      Settlement periods can vary based on US banking schedules and holidays.
     </Info>
   </Step>
 </Steps>
@@ -118,10 +123,12 @@ Understand the complete US transfer flow from customer initiation through final 
 
 <Card title="Final Confirmation" icon="check-circle">
   **What happens:**
+
   - After the user clicks **I wish to proceed**, the transfer is finalized
   - Customer receives confirmation
-  
+
   **Your role:**
+
   - Confirm transfer completion with customer
   - Provide transaction reference if available
   - Set expectations for beneficiary receipt
@@ -158,34 +165,34 @@ Completion Confirmation
 ## Key Timelines
 
 <AccordionGroup>
-  <Accordion icon="clock" title="Bank Connection">
+  <Accordion title="Bank Connection" icon="clock">
     Plaid connection typically completes within minutes.
-    
+
     <Tip>
-    Most connections are instant, but some banks may require additional verification.
+      Most connections are instant, but some banks may require additional verification.
     </Tip>
   </Accordion>
-  
-  <Accordion icon="calendar" title="Transfer Processing">
+  <Accordion title="Transfer Processing" icon="calendar">
     Processing time varies based on:
+
     - US banking settlement periods
     - Bank processing schedules
     - Weekends and holidays
     - Transfer amount
-    
+
     <Warning>
-    Always check US banking holidays as they can delay processing.
+      Always check US banking holidays as they can delay processing.
     </Warning>
   </Accordion>
-  
-  <Accordion icon="hourglass" title="Beneficiary Receipt">
+  <Accordion title="Beneficiary Receipt" icon="hourglass">
     Funds typically appear in beneficiary account within:
+
     - Same day for most transfers
     - 1-2 business days for some banks
     - Longer during holidays or bank maintenance
-    
+
     <Info>
-    Set realistic expectations based on the specific bank and timing.
+      Set realistic expectations based on the specific bank and timing.
     </Info>
   </Accordion>
 </AccordionGroup>
@@ -193,26 +200,27 @@ Completion Confirmation
 ## Common Issues and Solutions
 
 <AccordionGroup>
-  <Accordion icon="question" title="Customer can't connect their bank via Plaid">
+  <Accordion title="Customer can't connect their bank via Plaid" icon="question">
     **Steps:**
+
     1. Verify the bank is supported by Plaid
     2. Check for bank maintenance or outages
     3. Ask customer to try again in a few minutes
     4. Verify customer is using correct bank credentials
     5. If persistent, suggest customer contact their bank
   </Accordion>
-  
-  <Accordion icon="question" title="Transfer shows submitted but no progress">
+  <Accordion title="Transfer shows submitted but no progress" icon="question">
     **Steps:**
+
     1. Check transfer status in system
     2. Verify bank connection is still active
     3. Check for any error messages
-    4. If >24 hours with no progress, escalate to tech team
+    4. If \>24 hours with no progress, escalate to tech team
     5. Update customer with status and next steps
   </Accordion>
-  
-  <Accordion icon="question" title="Customer says beneficiary hasn't received funds">
+  <Accordion title="Customer says beneficiary hasn't received funds" icon="question">
     **Steps:**
+
     1. Verify transfer shows as completed in system
     2. Check estimated delivery timeline
     3. Consider US banking settlement periods
@@ -220,9 +228,9 @@ Completion Confirmation
     5. Provide transaction reference for beneficiary to verify with their bank
     6. If beyond expected timeline, investigate further
   </Accordion>
-  
-  <Accordion icon="question" title="Transfer failed after bank connection">
+  <Accordion title="Transfer failed after bank connection" icon="question">
     **Steps:**
+
     1. Check the specific failure reason
     2. Common reasons: insufficient funds, bank rejection, connection lost
     3. Inform customer of the specific issue
@@ -234,27 +242,24 @@ Completion Confirmation
 ## Best Practices
 
 <AccordionGroup>
-  <Accordion icon="message" title="Setting Expectations">
+  <Accordion title="Setting Expectations" icon="message">
     - Always mention that timelines are estimates
     - Explain US banking settlement periods can affect delivery
     - Account for weekends and holidays in timelines
     - Be transparent about potential delays
   </Accordion>
-  
-  <Accordion icon="shield" title="Security Communication">
+  <Accordion title="Security Communication" icon="shield">
     - Reassure customers that Plaid is secure
     - Explain that Aspora never sees bank credentials
     - Address any security concerns proactively
   </Accordion>
-  
-  <Accordion icon="clock" title="Timeline Management">
+  <Accordion title="Timeline Management" icon="clock">
     - Check US banking holidays before setting expectations
     - Consider bank processing schedules
     - Add buffer time to all estimates
     - Follow up proactively if delays occur
   </Accordion>
-  
-  <Accordion icon="file" title="Documentation">
+  <Accordion title="Documentation" icon="file">
     - Document Plaid connection issues
     - Note any bank-specific problems
     - Track transfer completion times
@@ -267,25 +272,22 @@ Completion Confirmation
 <CardGroup cols={2}>
   <Card title="Business Days" icon="calendar">
     US banking operates on business days only.
-    
+
     Transfers initiated on weekends or holidays may be delayed.
   </Card>
-  
   <Card title="Settlement Periods" icon="clock">
     Settlement periods vary by bank and transfer type.
-    
+
     Some banks process faster than others.
   </Card>
-  
   <Card title="Holidays" icon="calendar-check">
     US banking holidays affect processing.
-    
+
     Always check holiday calendar when setting expectations.
   </Card>
-  
   <Card title="Bank Maintenance" icon="wrench">
     Banks occasionally perform maintenance.
-    
+
     This can temporarily delay connections or transfers.
   </Card>
 </CardGroup>
@@ -293,4 +295,3 @@ Completion Confirmation
 <Note>
   US transfers use a different flow than UK/EUR/UAE due to Plaid integration and US banking requirements. Always set realistic expectations based on US banking schedules and settlement periods.
 </Note>
-
